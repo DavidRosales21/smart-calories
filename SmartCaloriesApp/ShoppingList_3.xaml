@@ -2,10 +2,22 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SmartCaloriesApp.ShoppingList_3">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <Grid RowDefinitions="Auto,*"
+          Margin="20">
+        <Border 
+            HorizontalOptions="Center" 
+            Background="#8FABe4" 
+            Stroke="#8FABe4"
+            Grid.Row="0">
+            <Label Text="Shopping List" TextColor="#EFECE3" FontSize="26"/>
+
+        </Border>
+        <Border 
+             Grid.Row="1"
+             Margin="20"
+             StrokeThickness="2"
+             Stroke="#8FABD4">
+            <CollectionView/>
+        </Border>
+    </Grid>
 </ContentPage>
