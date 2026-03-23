@@ -75,10 +75,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Recipes_4.xaml.cs">
+	    <DependentUpon>Recipes_4.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="MealPlanner_2.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Reciepes_4.xaml">
+	  <MauiXaml Update="Recipes_4.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="ShoppingList_3.xaml">
