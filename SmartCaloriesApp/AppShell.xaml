@@ -6,9 +6,26 @@
     xmlns:local="clr-namespace:SmartCaloriesApp"
     Title="SmartCaloriesApp">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-
+    <TabBar>
+        <Tab Title="User Info">
+            <ShellContent
+        ContentTemplate="{DataTemplate local:UserInfo_1}"
+        Route="UserInfo_1" />
+        </Tab>
+        <Tab Title="Meals">
+            <ShellContent
+               ContentTemplate="{DataTemplate local:MealPlanner_2}"
+                Route="MealPlanner_2" />
+        </Tab>
+        <Tab Title="Shopping List">
+            <ShellContent
+    ContentTemplate="{DataTemplate local:ShoppingList_3}"
+    Route="ShoppingList_3" />
+        </Tab>
+        <Tab Title="Reciepes">
+            <ShellContent
+ContentTemplate="{DataTemplate local:Reciepes_4}"
+Route="Reciepes" />
+        </Tab>
+    </TabBar>
 </Shell>
