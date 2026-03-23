@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="../SmartCaloriesLibrary/SmartCaloriesLibrary.csproj" />
+  <Project Path="SmartCaloriesApp.csproj">
+    <Deploy Solution="Debug|*" />
+  </Project>
+</Solution>
