@@ -4,6 +4,7 @@ public partial class UserInfo_1 : ContentPage
 {
 	public UserInfo_1()
 	{
+
 		InitializeComponent();
         // 1. Generate a list of ages from 1 to 100
         List<int> ageList = Enumerable.Range(1, 100).ToList();
