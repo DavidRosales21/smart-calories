@@ -7,7 +7,7 @@ namespace SmartCaloriesLibrary
     /// <summary>
     /// the ingredient class represents all the necesary information of an ingredient to be used in a meal
     /// </summary>
-    internal class Ingredient:FoodItem
+    public class Ingredient:FoodItem
     {
         #region fields
         private string _image;

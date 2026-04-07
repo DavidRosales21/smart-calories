@@ -7,7 +7,7 @@ namespace SmartCaloriesLibrary
     /// <summary>
     /// The FoodItem class represents the base class for a meal or ingredient
     /// </summary>
-    internal abstract class FoodItem
+    public abstract class FoodItem
     {
         #region fields
         protected string _name;
