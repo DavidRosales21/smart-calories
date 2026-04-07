@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFrameworks>net10.0-android</TargetFrameworks>
@@ -75,22 +75,31 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Recipes_4.xaml.cs">
-	    <DependentUpon>Recipes_4.xaml</DependentUpon>
+	  <Compile Update="Planner.xaml.cs">
+	    <DependentUpon>Planner.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Day.xaml.cs">
+	    <DependentUpon>Day.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="ShoppingList.xaml.cs">
+	    <DependentUpon>ShoppingList.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="UserPage.xaml.cs">
+	    <DependentUpon>UserPage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="MealPlanner_2.xaml">
+	  <MauiXaml Update="Planner.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Recipes_4.xaml">
+	  <MauiXaml Update="Day.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="ShoppingList_3.xaml">
+	  <MauiXaml Update="ShoppingList.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="UserInfo_1.xaml">
+	  <MauiXaml Update="UserPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
