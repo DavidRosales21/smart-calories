@@ -1,4 +1,5 @@
 namespace SmartCaloriesLibrary;
+using System.Text.Json;
 
 
 /// <summary>
@@ -7,6 +8,20 @@ namespace SmartCaloriesLibrary;
 /// data tier class will be responable for loading data from the recipes.json workout.json
 /// stores all loaded meals and workouts in lists so they can be filtered by category or type
 /// </summary>
+///
+
+
+// helper class to read the json file 
+internal class MealsWrapper
+{
+    public List<Meal> meals { get; set; }
+}
+
+internal class WorkoutsWrapper
+{
+    public List<Workout> workouts { get; set; }
+}
+
 public class DataLibrary
 {
     #region Feild Variables
@@ -39,5 +54,26 @@ public class DataLibrary
     }
 
     #endregion
+    #region Methods
+
+    public async Task LoadMeals(Stream stream)
+    {
+        MealsWrapper mealsWrapper = await JsonSerializer.DeserializeAsync<MealsWrapper>(stream);
+        
+        _meals = mealsWrapper.meals;
+    }
+
+    public async Task LoadWorkouts(Stream stream)
+    {
+        
+        
+        WorkoutsWrapper workoutsWrapper = await JsonSerializer.DeserializeAsync<WorkoutsWrapper>(stream);
+        
+        _workouts = workoutsWrapper.workouts;
+    }
+    
+    
+    #endregion
+    
 
 }
