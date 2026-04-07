@@ -9,5 +9,20 @@ namespace SmartCaloriesLibrary;
 /// </summary>
 public class RecipeBook
 {
+    #region Feild Variables
+
+    private Dictionary<string, Meal> _meals;
+    private Dictionary<string, Workout> _workouts;
     
+    #endregion
+
+    #region Constructors
+
+    public RecipeBook(Dictionary<string, Meal> meals, Dictionary<string, Workout> workouts)
+    {
+        _meals = new Dictionary<string, Meal>();
+        _workouts = new Dictionary<string, Workout>();
+    }
+    
+    #endregion
 }
