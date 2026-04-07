@@ -8,7 +8,7 @@ namespace SmartCaloriesLibrary
     /// The meal class represents a set of ingredients and instructions for cooking a meal, 
     /// it also contains the nutritional information of the
     /// </summary>
-    internal class Meal:FoodItem
+    public class Meal:FoodItem
     {
         private string _mealImage;
         private string _reciepe;

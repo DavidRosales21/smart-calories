@@ -25,15 +25,15 @@
             </Grid.ColumnDefinitions>
             <Label Text="User Information" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="Center" FontSize="Medium"></Label>
             <Label Text="Name :" Grid.Row="1" Grid.Column="0" VerticalOptions="Center"></Label>
-            <Entry Grid.Row="1" Grid.Column="1" VerticalOptions="Center"></Entry>
+            <Entry x:Name="_txtName" Grid.Row="1" Grid.Column="1" VerticalOptions="Center"></Entry>
             <Label Text="Sex :" Grid.Row="2" Grid.Column="0" VerticalOptions="Center" ></Label>
-            <HorizontalStackLayout Grid.Row="2" Grid.Column="1" VerticalOptions="Center">
-                <RadioButton>
+            <HorizontalStackLayout Grid.Row="2" Grid.Column="1" VerticalOptions="Center" RadioButtonGroup.GroupName="GenderGroup">
+                <RadioButton x:Name="_radioMale" IsChecked="True">
                     <RadioButton.Content>
                         <Image Source="male.png" HeightRequest="50" WidthRequest="50" />
                     </RadioButton.Content>
                 </RadioButton>
-                <RadioButton>
+                <RadioButton x:Name="_radioFemale">
                     <RadioButton.Content>
                         <Image Source="female.png" HeightRequest="50" WidthRequest="50"/>
                     </RadioButton.Content>
@@ -43,37 +43,42 @@
             <Picker x:Name="_pkrAge" FontSize="15" WidthRequest="200" Grid.Row="3" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" />
             <Label Text="Current Weight :" Grid.Row="4" VerticalOptions="Center"></Label>
             <HorizontalStackLayout Grid.Row="4" Grid.Column="1">
-                <Entry  HorizontalOptions="Start"/>
+                <Entry x:Name="_txtCrtWeight"  HorizontalOptions="Start"/>
                 <Label HorizontalOptions="Center" Text="Kg" VerticalOptions="Center"></Label>
             </HorizontalStackLayout>
             <Label Text="Target Weight :" Grid.Row="5" VerticalOptions="Center"></Label>
             <HorizontalStackLayout Grid.Row="5" Grid.Column="1">
-               <Entry  VerticalOptions="Center"></Entry>
+               <Entry x:Name="_txtTargetWeight" VerticalOptions="Center"></Entry>
                 <Label HorizontalOptions="Center" Text="Kg" VerticalOptions="Center"></Label>
             </HorizontalStackLayout>
             <Label Text="Height : " Grid.Row="6" VerticalOptions="Center"></Label>
             <HorizontalStackLayout Grid.Row="6" Grid.Column="1">
-                <Entry ></Entry>
-                <Label HorizontalOptions="Center" Text="ft" VerticalOptions="Center"></Label>
+                <Entry x:Name="_txtHeight"  HorizontalOptions="Start"></Entry>
+                <Label HorizontalOptions="Center" Text="cm" VerticalOptions="Center"></Label>
             </HorizontalStackLayout>
-            <Label Grid.Row="7" Text="Level : " VerticalOptions="Center"></Label>
-            <Picker Grid.Row="7" Grid.Column="1" Background="LightBlue">
+            <Label Grid.Row="7" Text="Level of Progress : " VerticalOptions="Center"></Label>
+            <Picker x:Name="_pkrProgress" Grid.Row="7" Grid.Column="1">
                 <Picker.Items>
                     <x:String>Slow and Steady</x:String>
                     <x:String>Let's do this smoothly</x:String>
                     <x:String>Fast and Furious</x:String>
                 </Picker.Items>
             </Picker>
-            <Label Grid.Row="8" Text="Activity" VerticalOptions="Center"></Label>
-            <Picker Grid.Row="8" Grid.Column="1" Background="LightBlue">
-                <Picker.Items>
-                    <x:String>I am Lazy !!! </x:String>
-                    <x:String>Hey, I do workout here and there</x:String>
-                    <x:String>I am the next Arnold Schwarzenegger !!</x:String>
-                </Picker.Items>
-            </Picker>
-            <Entry Grid.Row="12" Grid.ColumnSpan="2"></Entry>
-            <Button Grid.Row="13" Grid.ColumnSpan="2" Text="Submit" FontSize="Medium" Background="LightBlue" ></Button>
+            <Label Grid.Row="8" Text="Workout :" VerticalOptions="Center"></Label>
+            <HorizontalStackLayout Grid.Row="8" Grid.Column="1" VerticalOptions="Center" RadioButtonGroup.GroupName="WorkoutGroup">
+                <RadioButton x:Name="_radioYes" IsChecked="True">
+                    <RadioButton.Content>
+                        <Image Source="yes.png" HeightRequest="50" WidthRequest="50" />
+                    </RadioButton.Content>
+                </RadioButton>
+                <RadioButton x:Name="_radioNo">
+                    <RadioButton.Content>
+                        <Image Source="no.png" HeightRequest="50" WidthRequest="50"/>
+                    </RadioButton.Content>
+                </RadioButton>
+            </HorizontalStackLayout>
+            <Entry x:Name="_txtData" Grid.Row="12" Grid.ColumnSpan="2"></Entry>
+            <Button Grid.Row="13" Grid.ColumnSpan="2" Text="Submit" FontSize="Medium" Background="LightBlue" Clicked="OnSubmit"></Button>
 
 
         </Grid>
