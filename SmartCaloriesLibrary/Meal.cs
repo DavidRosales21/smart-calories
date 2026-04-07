@@ -8,31 +8,36 @@ namespace SmartCaloriesLibrary
     /// The meal class represents a set of ingredients and instructions for cooking a meal, 
     /// it also contains the nutritional information of the
     /// </summary>
-    internal class Meal
+    internal class Meal:FoodItem
     {
-        private string _name;
-        private double _calories;
         private string _mealImage;
         private string _reciepe;
         private List<Ingredient> _ingredientList;
 
-        public Meal(string name,double calories, string image, string reciepe, List<Ingredient> ingredients)
+        public Meal( string image, string reciepe, List<Ingredient> ingredients):base()
         {
-            _name = name;
-            _calories = calories;
             _mealImage = image;
             _reciepe = reciepe;
             _ingredientList = ingredients;
 
         }
 
+        public override double Calories
+        {
+            get
+            {
+                double calories = 0;
+                foreach(Ingredient ingredient in _ingredientList)
+                {
+                    calories =+ ingredient.Calories;
+                }
+                return calories;
+            }
+        }
+
         public List<Ingredient> Ingredients
         {
             get { return _ingredientList; }
-        }
-        public string Name
-        {
-            get { return _name; }
         }
         public string Image
         {
@@ -42,5 +47,6 @@ namespace SmartCaloriesLibrary
         {
             get { return _reciepe; }
         }
+
     }
 }

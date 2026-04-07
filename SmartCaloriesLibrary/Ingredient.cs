@@ -7,25 +7,21 @@ namespace SmartCaloriesLibrary
     /// <summary>
     /// the ingredient class represents all the necesary information of an ingredient to be used in a meal
     /// </summary>
-    internal class Ingredient
+    internal class Ingredient:FoodItem
     {
         #region fields
         private string _image;
-        private string _name;
-
+        private string _quantity;
         #endregion
 
         #region constructor
         /// <summary>
         /// The Ingredient constructor creates an ingredient object.
         ///
-        /// </summary>
-        /// <param name="image"> the image paramether represent the source file location of the igredient image</param>
-        /// <param name="name">  the name paramether represent the name or decription of the ingredient </param>
-        public Ingredient(string image, string name)
+        public Ingredient(string image, string quantity) : base()
         {
             _image = image;
-            _name = name;
+            _quantity = quantity;
         }
         #endregion
 
@@ -34,10 +30,16 @@ namespace SmartCaloriesLibrary
         {
             get { return _image; }
         }
-        public string Name
+        public string Quantity
         {
-            get { return _name; }
+            get { return _quantity; }
+        }
+        public override double Calories
+        {
+            get { return _calories; }
         }
         #endregion
+
+        
     }
 }
