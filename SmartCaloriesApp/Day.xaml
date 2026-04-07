@@ -3,24 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SmartCaloriesApp.Recipes_4">
 
-    <Grid RowDefinitions="auto,auto,*,auto,*">
-        <Picker Grid.Row="0"
+    <Grid RowDefinitions="auto,auto,*,auto,*,auto,*">
+        <Picker x:Name="_pckDay" 
+            Grid.Row="0"
             Margin="20"
             BackgroundColor="#EFECE3"
             TextColor="Black">
-
-            <Picker.Items>
-                <x:String>1</x:String>
-                <x:String>2</x:String>
-            </Picker.Items>
         </Picker>
         <Border Grid.Row="1"
                 HorizontalOptions="Center" 
                 Background="#8FABe4" 
                 Stroke="#8FABe4">
             <Label Text="Ingredients" 
-                       TextColor="#EFECE3" 
-                       FontSize="26"/>
+                   Padding="10"
+                   TextColor="#EFECE3" 
+                   FontSize="26"/>
         </Border>
 
         <Border
@@ -28,13 +25,14 @@
                 Margin="20"
                 StrokeThickness="2"
                 Stroke="#8FABD4">
-            <CollectionView/>
+            <CollectionView x:Name="_lstIngredients"/>
         </Border>
         <Border Grid.Row="3"
                 HorizontalOptions="Center" 
                 Background="#8FABe4" 
                 Stroke="#8FABe4">
             <Label Text="Recipe" 
+                   Padding="10"
                    TextColor="#EFECE3" 
                    FontSize="26"/>
 
@@ -43,7 +41,23 @@
                 Margin="20"
                 StrokeThickness="2"
                 Stroke="#8FABD4">
-            <CollectionView/>
+            <Label x:Name="_txtReciepe"/>
+        </Border>
+        <Border Grid.Row="5"
+                HorizontalOptions="Center" 
+                Background="#8FABe4" 
+                Stroke="#8FABe4">
+            <Label Text="Workout" 
+                   Padding="10"
+                   TextColor="#EFECE3" 
+                   FontSize="26"/>
+        </Border>
+        <Border
+                Grid.Row="6"
+                Margin="20"
+                StrokeThickness="2"
+                Stroke="#8FABD4">
+            <CollectionView x:Name="_lstWorkOut"/>
         </Border>
     </Grid>
 </ContentPage>
