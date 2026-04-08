@@ -1,4 +1,6 @@
 namespace SmartCaloriesLibrary;
+using System.Text.Json.Serialization;
+
 
 /// <summary>
 /// author:Hossam Abdelaziz(Sam)
@@ -21,7 +23,7 @@ public class Workout
     #endregion
    
     #region Constructors
-
+    [JsonConstructor]
     public Workout(string name, int duration, double caloriesBurned,
         string description, string image, string category)  
     {
@@ -37,12 +39,12 @@ public class Workout
     
     #region Properties
     
-    public String Name
+    public string Name
     {
         get {return _name;}
     }
     
-    public double Duration
+    public int Duration
     {
         get {return _duration;}
     }

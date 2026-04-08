@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
+
 
 namespace SmartCaloriesLibrary
 {
@@ -15,6 +17,7 @@ namespace SmartCaloriesLibrary
         private List<Ingredient> _ingredientList;
         private string _mealType;
 
+        [JsonConstructor]
         public Meal( string image, string reciepe, List<Ingredient> ingredients , string mealType):base()
         {
             _mealImage = image;
