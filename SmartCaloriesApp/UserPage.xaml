@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SmartCaloriesApp.UserInfo_1">
+             x:Class="SmartCaloriesApp.UserPage">
     <ScrollView>
         <Grid Background="Black" Padding="20">
             <Grid.RowDefinitions>
@@ -15,12 +15,9 @@
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="2*"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Label Text="User Information" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="Center" FontSize="Medium"></Label>
@@ -56,30 +53,26 @@
                 <Entry x:Name="_txtHeight"  HorizontalOptions="Start"></Entry>
                 <Label HorizontalOptions="Center" Text="cm" VerticalOptions="Center"></Label>
             </HorizontalStackLayout>
-            <Label Grid.Row="7" Text="Level of Progress : " VerticalOptions="Center"></Label>
-            <Picker x:Name="_pkrProgress" Grid.Row="7" Grid.Column="1">
+            <Label Grid.Row="7" Text="Level of daily activity : " VerticalOptions="Center"></Label>
+            <Picker x:Name="_pkrActivity" Grid.Row="7" Grid.Column="1">
                 <Picker.Items>
-                    <x:String>Slow and Steady</x:String>
-                    <x:String>Let's do this smoothly</x:String>
-                    <x:String>Fast and Furious</x:String>
+                    <x:String>Sedentary (Little to no exercise)</x:String>
+                    <x:String>Lightly active (light exercise 1-3 days/week)</x:String>
+                    <x:String>Moderately active (moderate exercise 3-5 days/week)</x:String>
+                    <x:String>Very active (hard exercise 6-7 days a week)</x:String>
+                    <x:String>Extra active (very hard exercise/physical job)</x:String>
                 </Picker.Items>
             </Picker>
-            <Label Grid.Row="8" Text="Workout :" VerticalOptions="Center"></Label>
-            <HorizontalStackLayout Grid.Row="8" Grid.Column="1" VerticalOptions="Center" RadioButtonGroup.GroupName="WorkoutGroup">
-                <RadioButton x:Name="_radioYes" IsChecked="True">
-                    <RadioButton.Content>
-                        <Image Source="yes.png" HeightRequest="50" WidthRequest="50" />
-                    </RadioButton.Content>
-                </RadioButton>
-                <RadioButton x:Name="_radioNo">
-                    <RadioButton.Content>
-                        <Image Source="no.png" HeightRequest="50" WidthRequest="50"/>
-                    </RadioButton.Content>
-                </RadioButton>
-            </HorizontalStackLayout>
-            <Entry x:Name="_txtData" Grid.Row="12" Grid.ColumnSpan="2"></Entry>
-            <Button Grid.Row="13" Grid.ColumnSpan="2" Text="Submit" FontSize="Medium" Background="LightBlue" Clicked="OnSubmit"></Button>
-
+            <Label Grid.Row="8" Text="How fast you wanna do it ?" VerticalOptions="Center"></Label>
+            <Picker x:Name="_pkrDays" Grid.Row="8" Grid.Column="1">
+                <Picker.Items>
+                    <x:String>Slow and Steady(26 weeks)</x:String>
+                    <x:String>Go with the flow(15 weeks)</x:String>
+                    <x:String>Lets go crazy (6 weeks)</x:String>
+                    <x:String>Kill me(1 week)</x:String>
+                </Picker.Items>
+            </Picker>
+            <Button Grid.Row="9" Grid.ColumnSpan="2" Text="Submit" FontSize="Medium" Background="LightBlue" Clicked="OnSubmit"></Button>
 
         </Grid>
     </ScrollView>

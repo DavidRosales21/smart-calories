@@ -7,25 +7,25 @@
     Title="SmartCaloriesApp">
 
     <TabBar>
-        <Tab Title="User Info">
+        <Tab Title="User">
             <ShellContent
-        ContentTemplate="{DataTemplate local:UserInfo_1}"
-        Route="UserInfo_1" />
+        ContentTemplate="{DataTemplate local:UserPage}"
+        Route="UserPage" />
         </Tab>
-        <Tab Title="Meals">
+        <Tab Title="Planner">
             <ShellContent
-               ContentTemplate="{DataTemplate local:MealPlanner_2}"
-                Route="MealPlanner_2" />
+               ContentTemplate="{DataTemplate local:Planner}"
+                Route="Planner" />
         </Tab>
         <Tab Title="Shopping List">
             <ShellContent
-    ContentTemplate="{DataTemplate local:ShoppingList_3}"
-    Route="ShoppingList_3" />
+    ContentTemplate="{DataTemplate local:ShoppingList}"
+    Route="ShoppingList" />
         </Tab>
-        <Tab Title="Recipes">
+        <Tab Title="Day">
             <ShellContent
-ContentTemplate="{DataTemplate local:Recipes_4}"
-Route="Recipes" />
+ContentTemplate="{DataTemplate local:Day}"
+Route="Day" />
         </Tab>
     </TabBar>
 </Shell>

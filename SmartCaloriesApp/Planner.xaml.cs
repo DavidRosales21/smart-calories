@@ -2,9 +2,9 @@ using System.Runtime.InteropServices;
 
 namespace SmartCaloriesApp;
 
-public partial class MealPlanner_2 : ContentPage
+public partial class Planner : ContentPage
 {
-	public MealPlanner_2()
+	public Planner()
 	{
 		InitializeComponent();
 		///create ingredients and meals
