@@ -1,6 +1,5 @@
 namespace SmartCaloriesLibrary;
-using System.Text.Json;
-
+using Newtonsoft.Json;
 
 /// <summary>
 /// author : Hossam Abdelaziz(Sam)
@@ -58,21 +57,75 @@ public class DataLibrary
 
     public async Task LoadMeals(Stream stream)
     {
-        MealsWrapper mealsWrapper = await JsonSerializer.DeserializeAsync<MealsWrapper>(stream);
-        
-        _meals = mealsWrapper.meals;
+        using StreamReader reader = new StreamReader(stream);
+        string json = await reader.ReadToEndAsync();
+        MealsWrapper wrapper = JsonConvert.DeserializeObject<MealsWrapper>(json);
+        _meals = wrapper.meals;
     }
 
     public async Task LoadWorkouts(Stream stream)
     {
-        
-        
-        WorkoutsWrapper workoutsWrapper = await JsonSerializer.DeserializeAsync<WorkoutsWrapper>(stream);
-        
-        _workouts = workoutsWrapper.workouts;
+        using StreamReader reader = new StreamReader(stream);
+        string json = await reader.ReadToEndAsync();
+        WorkoutsWrapper wrapper = JsonConvert.DeserializeObject<WorkoutsWrapper>(json);
+        _workouts = wrapper.workouts;
     }
-    
-    
+
+
+    public List<Meal> GetMealsByType(string mealType)
+    {
+        List<Meal> result = new List<Meal>();
+
+        foreach (Meal meal in _meals)
+        {
+            if (meal.MealType == mealType)
+            {
+                result.Add(meal);   
+            }
+        }
+        return result;
+    }
+
+    public List<Workout> GetWorkoutsByCategory(string category)
+    {
+
+        List<Workout> result = new List<Workout>();
+
+        foreach (Workout workout in _workouts)
+        {
+            if (workout.Category == category)
+            {
+                result.Add(workout);
+            }
+        }
+        return result;
+    }
+
+    public List<Meal> SearchMeals(string query)
+    {
+        List<Meal> results = new List<Meal>();
+        foreach (Meal meal in _meals)
+        {
+            if (meal.Name.Contains(query))
+            {
+                results.Add(meal);
+            }
+        }
+        return results;
+    }
+
+    public List<Workout> SearchWorkouts(string query)
+    {
+        List<Workout> results = new List<Workout>();
+        
+        foreach (Workout workout in _workouts){
+            if (workout.Name.Contains(query))
+            {
+                results.Add(workout);
+            }
+        }
+        return results;
+    }
     #endregion
     
 

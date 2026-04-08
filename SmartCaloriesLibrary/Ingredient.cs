@@ -18,11 +18,13 @@ namespace SmartCaloriesLibrary
         /// <summary>
         /// The Ingredient constructor creates an ingredient object.
         ///
-        public Ingredient(string image, string quantity) : base()
+        public Ingredient(string name, double calories, string quantity, string image) : base()
         {
-            _image = image;
+            _name = name;
+            _calories = calories;
             _quantity = quantity;
-        }
+            _image = image;
+        }   
         #endregion
 
         #region properties

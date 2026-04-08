@@ -1,5 +1,6 @@
 namespace SmartCaloriesLibrary;
 
+
 /// <summary>
 /// author:Hossam Abdelaziz(Sam)
 /// represents a single workout activity
@@ -21,7 +22,6 @@ public class Workout
     #endregion
    
     #region Constructors
-
     public Workout(string name, int duration, double caloriesBurned,
         string description, string image, string category)  
     {
@@ -37,12 +37,12 @@ public class Workout
     
     #region Properties
     
-    public String Name
+    public string Name
     {
         get {return _name;}
     }
     
-    public double Duration
+    public int Duration
     {
         get {return _duration;}
     }

@@ -2,12 +2,28 @@ using System.Runtime.InteropServices;
 
 namespace SmartCaloriesApp;
 
-public partial class MealPlanner_2 : ContentPage
+public partial class Planner : ContentPage
 {
-	public MealPlanner_2()
+	public Planner()
 	{
 		InitializeComponent();
-		///create ingredients and meals
 		
+	}
+
+	protected override void OnAppearing()
+	{
+		base.OnAppearing();
+		LoadPickers();
+	}
+
+	private void LoadPickers()
+	{
+		
+		System.Diagnostics.Debug.WriteLine($"Total meals: {App.Library.Meals.Count}");
+
+		_breakfastPicker.ItemsSource = App.Library.GetMealsByType("Breakfast");
+		_lunchPicker.ItemsSource = App.Library.GetMealsByType("Lunch");
+		_dinnerPicker.ItemsSource = App.Library.GetMealsByType("Dinner");
+		_snackPicker.ItemsSource = App.Library.GetMealsByType("Snack");
 	}
 }

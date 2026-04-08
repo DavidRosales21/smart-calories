@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SmartCaloriesApp.UserInfo_1">
+             x:Class="SmartCaloriesApp.UserPage">
     <ScrollView>
         <Grid Background="Black" Padding="20">
             <Grid.RowDefinitions>
@@ -15,9 +15,6 @@
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
@@ -76,8 +73,6 @@
                 </Picker.Items>
             </Picker>
             <Button Grid.Row="9" Grid.ColumnSpan="2" Text="Submit" FontSize="Medium" Background="LightBlue" Clicked="OnSubmit"></Button>
-            <Entry x:Name="_txtData" Grid.Row="13" Grid.ColumnSpan="2" HorizontalTextAlignment="Center"></Entry>
-
 
         </Grid>
     </ScrollView>

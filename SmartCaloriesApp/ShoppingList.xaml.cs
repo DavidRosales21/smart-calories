@@ -1,8 +1,8 @@
 namespace SmartCaloriesApp;
 
-public partial class ShoppingList_3 : ContentPage
+public partial class ShoppingList : ContentPage
 {
-	public ShoppingList_3()
+	public ShoppingList()
 	{
 		InitializeComponent();
 		_lstShoppingList=
