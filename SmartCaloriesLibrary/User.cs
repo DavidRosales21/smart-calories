@@ -13,11 +13,11 @@ public class User
     private double _height;
     private int _age;
     private string _gender;
-    private string _progress;
-    private bool _willWorkout;
+    private int _activity;
+    private int _days;
     #endregion
     #region Constructor
-    public User(string name, double crtWeight, double trgtWeight, double height, int age, string gender, string progress, bool willWorkout)
+    public User(string name, double crtWeight, double trgtWeight, double height, int age, string gender, int activity, int days)
     {
         _name = name;
         _crtWeight = crtWeight;
@@ -25,13 +25,15 @@ public class User
         _height = height;
         _age = age;
         _gender = gender;
-        _progress = progress;
-        _willWorkout = willWorkout;
+        _activity = activity;
+        _days = days;
     }
     #endregion
     #region Methods
     public double CalcDailyCalories()
     {
+        double dailyCalories = 0;
+        double totalDailyEnergy = 0;
         double basalMetabolicRate = (10 * _crtWeight) + (6.25 * _height) - (5 * _age);
         if(_gender == "Male")
         {
@@ -41,15 +43,32 @@ public class User
         {
             basalMetabolicRate = basalMetabolicRate - 161;
         }
-        double dailyCalories = 0;
-        if (_willWorkout == true)
+        switch (_activity)
         {
-            dailyCalories = basalMetabolicRate * 1.725;
+            case 0:
+                totalDailyEnergy = basalMetabolicRate * 1.2;
+                break;
+            case 1:
+                totalDailyEnergy = basalMetabolicRate * 1.375;
+                break;
+            case 2:
+                totalDailyEnergy = basalMetabolicRate * 1.55;
+                break;
+            case 3:
+                totalDailyEnergy = basalMetabolicRate * 1.725;
+                break;
+            case 4:
+                totalDailyEnergy = basalMetabolicRate * 1.9;
+                break;
+            default:
+                throw new Exception("Something wrong with your activity");
         }
-        else
-        {
-            dailyCalories = basalMetabolicRate * 1.2;
-        }
+
+        double totalCalorieDiffrence = (_trgtWeight - _crtWeight) * 7700;
+        double dailyAdjustement = totalCalorieDiffrence / _days;
+        dailyCalories = totalDailyEnergy + dailyAdjustement;
+
+
         return dailyCalories;
     }
     #endregion
@@ -136,29 +155,29 @@ public class User
         }
     }
 
-    public string Progress
+    public int Activity
     {
         get
         {
-            return _progress;
+            return _activity;
         }
 
         set
         {
-            _progress = value;
+            _activity = value;
         }
     }
 
-    public bool WillWorkout
+    public int Days
     {
         get
         {
-            return _willWorkout;
+            return _days;
         }
 
         set
         {
-            _willWorkout = value;
+            _days = value;
         }
     }
     #endregion
