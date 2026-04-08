@@ -71,8 +71,62 @@ public class DataLibrary
         
         _workouts = workoutsWrapper.workouts;
     }
-    
-    
+
+
+    public List<Meal> GetMealsByType(string mealType)
+    {
+        List<Meal> result = new List<Meal>();
+
+        foreach (Meal meal in _meals)
+        {
+            if (meal.MealType == mealType)
+            {
+                result.Add(meal);   
+            }
+        }
+        return result;
+    }
+
+    public List<Workout> GetWorkoutsByCategory(string category)
+    {
+
+        List<Workout> result = new List<Workout>();
+
+        foreach (Workout workout in _workouts)
+        {
+            if (workout.Category == category)
+            {
+                result.Add(workout);
+            }
+        }
+        return result;
+    }
+
+    public List<Meal> SearchMeals(string query)
+    {
+        List<Meal> results = new List<Meal>();
+        foreach (Meal meal in _meals)
+        {
+            if (meal.Name.Contains(query))
+            {
+                results.Add(meal);
+            }
+        }
+        return results;
+    }
+
+    public List<Workout> SearchWorkouts(string query)
+    {
+        List<Workout> results = new List<Workout>();
+        
+        foreach (Workout workout in _workouts){
+            if (workout.Name.Contains(query))
+            {
+                results.Add(workout);
+            }
+        }
+        return results;
+    }
     #endregion
     
 

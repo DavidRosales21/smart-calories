@@ -13,12 +13,14 @@ namespace SmartCaloriesLibrary
         private string _mealImage;
         private string _reciepe;
         private List<Ingredient> _ingredientList;
+        private string _mealType;
 
-        public Meal( string image, string reciepe, List<Ingredient> ingredients):base()
+        public Meal( string image, string reciepe, List<Ingredient> ingredients , string mealType):base()
         {
             _mealImage = image;
             _reciepe = reciepe;
             _ingredientList = ingredients;
+            _mealType = mealType;
 
         }
 
@@ -46,6 +48,11 @@ namespace SmartCaloriesLibrary
         public string Reciepe
         {
             get { return _reciepe; }
+        }
+
+        public string MealType
+        {
+            get { return _mealType; }
         }
 
     }
