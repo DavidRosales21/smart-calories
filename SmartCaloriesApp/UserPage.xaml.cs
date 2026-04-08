@@ -2,9 +2,9 @@ using SmartCaloriesLibrary;
 
 namespace SmartCaloriesApp;
 
-public partial class UserInfo_1 : ContentPage
+public partial class UserPage : ContentPage
 {
-	public UserInfo_1()
+	public UserPage()
 	{
 
 		InitializeComponent();
@@ -12,7 +12,7 @@ public partial class UserInfo_1 : ContentPage
         _pkrAge.ItemsSource = ageList;
     }
 
-    private void OnSubmit(object sender, EventArgs e)
+    private async void OnSubmit(object sender, EventArgs e)
     {
         string name = _txtName.Text;
         string gender = "";
@@ -48,7 +48,12 @@ public partial class UserInfo_1 : ContentPage
         }
         User user = new User(name,crtWeight,trgtWeight,height,age,gender,activity,days);
         double dailyCalories = user.CalcDailyCalories();
-        _txtData.Text = $"{user.Name} needs to eat around '{(int)dailyCalories}' calories for '{user.Days/7}' weeks to achieve desireable weight of '{user.TrgtWeight}' Kg";
+        string data = $"{user.Name} needs to eat around '{(int)dailyCalories}' calories for '{user.Days / 7}' weeks to achieve desireable weight of '{user.TrgtWeight}' Kg\n Are you ready to begin your journey ?";
+        bool nextPage = await DisplayAlertAsync("Target",data,"Yes", "No, Make Changes!!");
+        if(nextPage)
+        {
+            await Navigation.PushAsync(new Planner());
+        }
 
     }
 }
