@@ -1,8 +1,8 @@
 namespace SmartCaloriesApp;
 
-public partial class Day : ContentPage
+public partial class DayPage : ContentPage
 {
-	public Day()
+	public DayPage()
 	{
 		InitializeComponent();
 	}

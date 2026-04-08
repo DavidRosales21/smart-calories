@@ -78,7 +78,7 @@
 	  <Compile Update="Planner.xaml.cs">
 	    <DependentUpon>Planner.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="Day.xaml.cs">
+	  <Compile Update="DayPage.xaml.cs">
 	    <DependentUpon>Day.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="ShoppingList.xaml.cs">
@@ -93,7 +93,7 @@
 	  <MauiXaml Update="Planner.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Day.xaml">
+	  <MauiXaml Update="DayPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="ShoppingList.xaml">

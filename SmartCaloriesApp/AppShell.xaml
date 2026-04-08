@@ -24,7 +24,7 @@
         </Tab>
         <Tab Title="Day">
             <ShellContent
-ContentTemplate="{DataTemplate local:Day}"
+ContentTemplate="{DataTemplate local:DayPage}"
 Route="Day" />
         </Tab>
     </TabBar>
