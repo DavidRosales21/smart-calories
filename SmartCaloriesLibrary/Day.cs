@@ -55,4 +55,66 @@
             }
         }
         #endregion
+        
+        #region methods
+
+        public void AddMeal(Meal meal)
+        {
+            _mealList.Add(meal);
+        }
+
+        public void AddWorkout(Workout workout)
+        {
+            _workoutList.Add(workout);
+        }
+        
+        // get the total calories eaten from the list and add it up 
+        public  double GetCaloriesEaten()
+        {
+            double totalCaloriesEaten = 0;
+            foreach (Meal meal in _mealList)
+            {
+                totalCaloriesEaten += meal.Calories;
+            }
+            return totalCaloriesEaten;
+        }
+        
+        // get the total calories burned and add it up from the workout list
+        public double GetCaloriesBurned()
+        {
+            double totalCaloriesBurned = 0;
+            foreach (Workout workout in _workoutList)
+            {
+                totalCaloriesBurned += workout.CaloriesBurned;
+            }
+            return totalCaloriesBurned;
+        }
+        
+        // calculate the net calories 
+        public double GetNetCalories()
+        {
+             return GetCaloriesEaten()- GetCaloriesBurned();
+        }
+        
+        //compaer net calories to target 
+
+        public string GetCalorieStatus()    
+        {
+            if (GetNetCalories() < _targetCalories)
+            {
+                return "Under Goal";
+            }
+            else if (GetNetCalories() == _targetCalories)
+            {
+                return "On Goal";
+            }
+            else
+            {
+                
+                return "Over Goal";
+            }
+
+        }
+        #endregion
+        
     }

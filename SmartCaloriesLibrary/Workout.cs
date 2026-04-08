@@ -68,4 +68,14 @@ public class Workout
     }
 
     #endregion
+
+
+    #region Methods
+    
+    public override string ToString()
+    {
+        return $"{_name} - {_duration} min - {_caloriesBurned} cal burned";
+    }
+    #endregion
+
 }
