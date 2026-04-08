@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Text.Json.Serialization;
 
 
 namespace SmartCaloriesLibrary
@@ -17,14 +16,14 @@ namespace SmartCaloriesLibrary
         private List<Ingredient> _ingredientList;
         private string _mealType;
 
-        [JsonConstructor]
-        public Meal( string image, string reciepe, List<Ingredient> ingredients , string mealType):base()
+        public Meal(string name, string mealImage, string recipe, 
+            List<Ingredient> ingredients, string mealType) : base()
         {
-            _mealImage = image;
-            _reciepe = reciepe;
+            _name = name;
+            _mealImage = mealImage; 
+            _reciepe = recipe;
             _ingredientList = ingredients;
             _mealType = mealType;
-
         }
 
         public override double Calories
@@ -34,7 +33,7 @@ namespace SmartCaloriesLibrary
                 double calories = 0;
                 foreach(Ingredient ingredient in _ingredientList)
                 {
-                    calories =+ ingredient.Calories;
+                    calories += ingredient.Calories;
                 }
                 return calories;
             }
@@ -44,11 +43,11 @@ namespace SmartCaloriesLibrary
         {
             get { return _ingredientList; }
         }
-        public string Image
+        public string MealImage
         {
             get { return _mealImage; }
         }
-        public string Reciepe
+        public string Recipe
         {
             get { return _reciepe; }
         }
@@ -58,5 +57,9 @@ namespace SmartCaloriesLibrary
             get { return _mealType; }
         }
 
+        public override string ToString()
+        {
+            return _name; 
+        }
     }
 }

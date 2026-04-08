@@ -1,6 +1,5 @@
 namespace SmartCaloriesLibrary;
-using System.Text.Json;
-
+using Newtonsoft.Json;
 
 /// <summary>
 /// author : Hossam Abdelaziz(Sam)
@@ -58,18 +57,18 @@ public class DataLibrary
 
     public async Task LoadMeals(Stream stream)
     {
-        MealsWrapper mealsWrapper = await JsonSerializer.DeserializeAsync<MealsWrapper>(stream);
-        
-        _meals = mealsWrapper.meals;
+        using StreamReader reader = new StreamReader(stream);
+        string json = await reader.ReadToEndAsync();
+        MealsWrapper wrapper = JsonConvert.DeserializeObject<MealsWrapper>(json);
+        _meals = wrapper.meals;
     }
 
     public async Task LoadWorkouts(Stream stream)
     {
-        
-        
-        WorkoutsWrapper workoutsWrapper = await JsonSerializer.DeserializeAsync<WorkoutsWrapper>(stream);
-        
-        _workouts = workoutsWrapper.workouts;
+        using StreamReader reader = new StreamReader(stream);
+        string json = await reader.ReadToEndAsync();
+        WorkoutsWrapper wrapper = JsonConvert.DeserializeObject<WorkoutsWrapper>(json);
+        _workouts = wrapper.workouts;
     }
 
 
