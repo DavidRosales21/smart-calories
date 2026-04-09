@@ -14,7 +14,7 @@
                    VerticalOptions="Center"
                    HorizontalOptions="Start"/>
             <Label Grid.Row="0" Grid.Column="1"
-                   Text="2000"
+                   x:Name="_txtCalories"
                    FontSize="18"
                    FontAttributes="Bold"
                    VerticalOptions="Center"
