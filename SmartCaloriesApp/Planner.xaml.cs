@@ -1,16 +1,21 @@
 using System;
+using System.Collections.ObjectModel;
 using System.Runtime.InteropServices;
 using Microsoft.Maui.Controls;
 using SmartCaloriesLibrary;
+using System.Collections.ObjectModel;
+
 
 namespace SmartCaloriesApp;
 
 public partial class Planner : ContentPage
 {
+
+	private ObservableCollection<DaySummary> _dayPlans = new ObservableCollection<DaySummary>();	
     public Planner()
     {
         InitializeComponent();
-
+        _mealPlansList.ItemsSource = _dayPlans;
     }
     public Planner(double calories)
     {
@@ -68,6 +73,19 @@ public partial class Planner : ContentPage
 
 		_nutritionalValueLabel.Text = $"{day.GetNetCalories()} cals";
 
+		
+		DaySummary summary = new DaySummary
+		{
+			Date = day.Date.ToString("MMM dd"),
+			Meals = string.Join(", ", day.MealList.Select(m => m.Name)),
+			Workout = day.WorkoutList.Count > 0 ? day.WorkoutList[0].Name : "None",
+			CaloriesEaten = day.GetCaloriesEaten(),
+			CaloriesBurned = day.GetCaloriesBurned(),
+			NetCalories = day.GetNetCalories(),
+			Status = day.GetCalorieStatus()
+		};
+
+		_dayPlans.Add(summary);
 
 	}
 
