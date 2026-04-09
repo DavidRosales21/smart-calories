@@ -7,13 +7,19 @@ namespace SmartCaloriesApp;
 
 public partial class Planner : ContentPage
 {
-	public Planner()
-	{
-		InitializeComponent();
-		
-	}
+    public Planner()
+    {
+        InitializeComponent();
 
-	protected override void OnAppearing()
+    }
+    public Planner(double calories)
+    {
+        InitializeComponent();
+        _txtCalories.Text = ((int)calories).ToString();
+
+    }
+
+    protected override void OnAppearing()
 	{
 		base.OnAppearing();
 		LoadPickers();
