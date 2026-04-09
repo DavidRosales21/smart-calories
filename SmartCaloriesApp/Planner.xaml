@@ -133,41 +133,56 @@
                     StrokeThickness="1"
                     HeightRequest="300">
                    
-                   <CollectionView x:Name="_mealPlansList">
-                   <CollectionView.ItemTemplate >
-                          <DataTemplate>
-                                 <Frame Margin="0,5,0,5" Padding="10">
-                                        <Grid ColumnDefinitions="*, *, *, *, *,  *, *">
-                                               <Label Grid.Column="0"
-                                                      Text="{Binding Date, StringFormat='{0:MMM dd}'}"
-                                                      FontAttributes="Bold"
-                                                      VerticalOptions="Center"/>
-                                               
-                                               <Label Grid.Column="1"
-                                                      Text="{Binding Meals}"
-                                                      VerticalOptions="Center"/>
-                                               <Label Grid.Column="2"
-                                                      Text="{Binding Workout}"
-                                                      VerticalOptions="Center"/>
-                                               
-                                               <Label Grid.Column="3"
-                                                      Text="{Binding CaloriesEaten}"
-                                                      VerticalOptions="Center"/>
-                                               <Label Grid.Column="4"
-                                                      Text="{Binding CaloriesBurned}"
-                                                      VerticalOptions="Center"/>
-                                               <Label Grid.Column="5"
-                                                      Text="{Binding NetCalories}"
-                                                      VerticalOptions="Center"/>
-                                               <Label Grid.Column="6"
-                                                      Text="{Binding Status}"
-                                                      VerticalOptions="Center"/>
-                                        </Grid>
-                                 </Frame>
-                          </DataTemplate>
-                   </CollectionView.ItemTemplate>
-                   
-                   </CollectionView>
+                   <VerticalStackLayout>
+                          <!--  table header -->
+                          <Grid ColumnDefinitions="*, *, *, *, *, *, *"
+                                BackgroundColor="Blue"
+                                Padding="10">
+                                 <Label Grid.Column="0" Text="Date" FontAttributes="Bold" />
+                                 <Label Grid.Column="1" Text="Meals" FontAttributes="Bold" />
+                                 <Label Grid.Column="2" Text="Workout" FontAttributes="Bold" />
+                                 <Label Grid.Column="3" Text="Cal Eaten" FontAttributes="Bold" />
+                                 <Label Grid.Column="4" Text="Cal Burned" FontAttributes="Bold" />
+                                 <Label Grid.Column="5" Text="Net Cal" FontAttributes="Bold" />
+                                 <Label Grid.Column="6" Text="Status" FontAttributes="Bold" />
+                          </Grid>
+                          
+                            <CollectionView x:Name="_mealPlansList">
+                             <CollectionView.ItemTemplate >
+                                 <DataTemplate>
+                                        <Frame Margin="0,5,0,5" Padding="10">
+                                               <Grid ColumnDefinitions="*, *, *, *, *,  *, *">
+                                                      <Label Grid.Column="0"
+                                                             Text="{Binding Date, StringFormat='{0:MMM dd}'}"
+                                                             FontAttributes="Bold"
+                                                             VerticalOptions="Center"/>
+                                                      
+                                                      <Label Grid.Column="1"
+                                                             Text="{Binding Meals}"
+                                                             VerticalOptions="Center"/>
+                                                      <Label Grid.Column="2"
+                                                             Text="{Binding Workout}"
+                                                             VerticalOptions="Center"/>
+                                                      
+                                                      <Label Grid.Column="3"
+                                                             Text="{Binding CaloriesEaten}"
+                                                             VerticalOptions="Center"/>
+                                                      <Label Grid.Column="4"
+                                                             Text="{Binding CaloriesBurned}"
+                                                             VerticalOptions="Center"/>
+                                                      <Label Grid.Column="5"
+                                                             Text="{Binding NetCalories}"
+                                                             VerticalOptions="Center"/>
+                                                      <Label Grid.Column="6"
+                                                             Text="{Binding Status}"
+                                                             VerticalOptions="Center"/>
+                                               </Grid>
+                                        </Frame>
+                                 </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                          
+                             </CollectionView>
+                         </VerticalStackLayout>
                    
                    
             </Border>
