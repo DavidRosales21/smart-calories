@@ -55,8 +55,35 @@ public partial class Planner : ContentPage
 			day.AddMeal((Meal)_snackPicker.SelectedItem);
 		}
 
-		_nutritionalValueLabel.Text = $"{day.GetCaloriesEaten()} cals";
+		if (_radioYes.IsChecked && _workoutPicker.ItemsSource != null)
+		{
+			day.AddWorkout((Workout)_workoutPicker.SelectedItem);
+		}
+
+		_nutritionalValueLabel.Text = $"{day.GetNetCalories()} cals";
 
 
+	}
+
+	private void _radioYes_CheckedChanged(object? sender, CheckedChangedEventArgs e)
+	{
+
+		if (e.Value)
+		{
+			_workoutLabel.IsVisible = true; 
+			_workoutPicker.IsVisible = true;
+			_workoutPicker.ItemsSource = App.Library.Workouts;
+			
+			
+		}
+	}
+
+	private void _radioNo_CheckedChanged(object? sender, CheckedChangedEventArgs e)
+	{
+		if (e.Value)
+		{
+			_workoutPicker.IsVisible = false;
+			_workoutLabel.IsVisible = false;
+		}
 	}
 }
