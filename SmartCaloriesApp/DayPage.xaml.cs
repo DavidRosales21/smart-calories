@@ -9,6 +9,7 @@ public partial class DayPage : ContentPage
     private List<Day> _days;
     private int _crtMealIndex;
     private DateTime _crtDate;
+    private int _crtDay;
 
     public DayPage(Planner planner)
 	{
@@ -16,23 +17,37 @@ public partial class DayPage : ContentPage
 		InitializeComponent();
         _days = _planner.Days;
         _crtMealIndex = 0;
-        _crtDate = (DateTime) _pckDay.Date;
-
+        _crtDate = DateTime.Today;
+        _crtDay = 0;
 	}
 
     private void OnNextReciepe(object sender, EventArgs e)
     {
-    
+        _txtMeal.Text = _days[_crtDay].MealList[_crtMealIndex].Name;
+        _crtMealIndex += 1;
+        _txtReciepe.Text = _days[_crtDay].MealList[_crtMealIndex].Recipe;
+        _lstIngredients.ItemsSource = _days[_crtDay].MealList[_crtMealIndex].Ingredients;
     }
     private void OnPrevReciepe(object sender, EventArgs e)
     {
-
+        _crtMealIndex -= 1;
+        _txtReciepe.Text = _days[_crtDay].MealList[_crtMealIndex].Recipe;
+        _lstIngredients.ItemsSource = _days[_crtDay].MealList[_crtMealIndex].Ingredients;
     }
 
-    private void OnDateSelected(object sender, DateChangedEventArgs e)
+    private async void OnDateSelected(object sender, DateChangedEventArgs e)
     {
+        try
+        {
         _crtDate = (DateTime)_pckDay.Date;
         searchPlan(_crtDate);
+        _lstWorkOut.Text = _days[_crtDay].WorkoutList[0].ToString();
+        }
+        catch(Exception ex)
+        {
+
+        }
+       
     }
 
     private void searchPlan(DateTime date)
@@ -42,8 +57,9 @@ public partial class DayPage : ContentPage
         {
             if (day.Date == date)
             {
-                 
+                    break;     
             }
+            _crtDay = dayIndex;
         }
     }
 }

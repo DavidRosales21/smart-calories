@@ -23,7 +23,8 @@
                         FontSize="26"
                         Clicked="OnPrevReciepe"/>
 
-                <Label Text="Recipe" 
+                <Label x:Name="_txtMeal"
+                       Text="Reciepe" 
                        Padding="10"
                        TextColor="#EFECE3" 
                        FontSize="26"/>
@@ -73,7 +74,7 @@
                 Margin="20"
                 StrokeThickness="2"
                 Stroke="#8FABD4">
-            <CollectionView x:Name="_lstWorkOut"/>
+            <Label x:Name="_lstWorkOut"/>
         </Border>
     </Grid>
 </ContentPage>
