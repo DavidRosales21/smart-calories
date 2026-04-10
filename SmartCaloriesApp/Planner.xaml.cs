@@ -43,6 +43,9 @@ public partial class Planner : ContentPage
 
 	private void _btnPlannerSave_OnClicked(object? sender, EventArgs e)
 	{
+		
+		
+		
 		DateTime date = _mealDatePicker.Date.Value;
 		Day day = new Day(date,2000);
 
