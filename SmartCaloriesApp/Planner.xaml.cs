@@ -18,8 +18,8 @@ public partial class Planner : ContentPage
     {
 		_user = user;
         InitializeComponent();
-        _mealPlansList.ItemsSource = _dayPlans;
         _dayPlans = new ObservableCollection<DaySummary>();
+        _mealPlansList.ItemsSource = _dayPlans;
 		_days = new List<Day>();
     }
 
