@@ -12,18 +12,13 @@ public partial class Planner : ContentPage
 {
 
 	private ObservableCollection<DaySummary> _dayPlans = new ObservableCollection<DaySummary>();
-	private UserPage _user;
-    public Planner(UserPage user)
+	private User _user;
+    public Planner(User user)
     {
         InitializeComponent();
 		_user = user;
         _mealPlansList.ItemsSource = _dayPlans;
-    }
-    public Planner(double calories)
-    {
-        InitializeComponent();
-        _txtCalories.Text = ((int)calories).ToString();
-
+		_txtCalories.Text = ((int)user.CalcDailyCalories()).ToString(); 
     }
 
     protected override void OnAppearing()

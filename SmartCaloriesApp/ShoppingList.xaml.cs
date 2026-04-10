@@ -2,7 +2,7 @@ namespace SmartCaloriesApp;
 
 public partial class ShoppingList : ContentPage
 {
-	public ShoppingList()
+	public ShoppingList(Planner planner)
 	{
 		InitializeComponent();
 	}

@@ -16,10 +16,9 @@ public static class MauiProgram
             });
 
         //create application services and prepare pages for dependency injection
-        builder.Services.AddSingleton<UserPage>();
         builder.Services.AddSingleton<Planner>();
-        builder.Services.AddSingleton<ShoppingList>();
-        builder.Services.AddSingleton<DayPage>();
+        builder.Services.AddTransient<ShoppingList>();
+        builder.Services.AddTransient<DayPage>();
 
         return builder.Build();
     }
