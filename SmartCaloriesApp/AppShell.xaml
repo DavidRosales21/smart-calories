@@ -22,10 +22,10 @@
     ContentTemplate="{DataTemplate local:ShoppingList}"
     Route="ShoppingList" />
         </Tab>
-        <Tab Title="Day">
+        <Tab Title="DayPage">
             <ShellContent
 ContentTemplate="{DataTemplate local:DayPage}"
-Route="Day" />
+Route="DayPage" />
         </Tab>
     </TabBar>
 </Shell>
