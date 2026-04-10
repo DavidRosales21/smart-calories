@@ -1,117 +1,118 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SmartCaloriesApp.Planner">
 
     <ScrollView>
         <Grid Padding="20" RowSpacing="15" ColumnSpacing="10"
-              RowDefinitions="Auto, 50,Auto,Auto,Auto,Auto,Auto,Auto,Auto , Auto ,Auto"
+              RowDefinitions="Auto, 50,Auto,Auto,Auto,Auto,Auto,Auto,Auto , Auto ,Auto ,Auto"
               ColumnDefinitions="*, *">
 
             <Label Grid.Row="0" Grid.Column="0"
                    Text="Today's Calorie Goal :"
                    FontSize="18"
                    VerticalOptions="Center"
-                   HorizontalOptions="Start"/>
+                   HorizontalOptions="Start" />
             <Label Grid.Row="0" Grid.Column="1"
                    x:Name="_txtCalories"
                    FontSize="18"
                    FontAttributes="Bold"
                    VerticalOptions="Center"
-                   HorizontalOptions="Start"/>
+                   HorizontalOptions="Start" />
 
             <Label Grid.Row="1" Grid.Column="0"
                    Text="Date :"
                    FontSize="16"
                    VerticalOptions="Center"
-                   HorizontalOptions="Start"/>
+                   HorizontalOptions="Start" />
             <DatePicker Grid.Row="1" Grid.Column="1"
                         x:Name="_mealDatePicker"
                         Format="MMM dd"
                         VerticalOptions="Center"
                         HorizontalOptions="Start"
-                        Margin="0,25,0,0"/>
-            
-            
+                        Margin="0,25,0,0" />
+
+
             <Label Grid.Row="2" Grid.Column="0"
                    Text="Breakfast:"
                    FontSize="16"
                    VerticalOptions="Center"
-                   HorizontalOptions="Start"/>
+                   HorizontalOptions="Start" />
             <Picker Grid.Row="2" Grid.Column="1"
                     x:Name="_breakfastPicker"
                     Title="Select Meal"
-                    HorizontalOptions="Fill"/>
+                    HorizontalOptions="Fill" />
 
             <Label Grid.Row="3" Grid.Column="0"
                    Text="Snack:"
                    FontSize="16"
                    VerticalOptions="Center"
-                   HorizontalOptions="Start"/>
+                   HorizontalOptions="Start" />
             <Picker Grid.Row="3" Grid.Column="1"
                     x:Name="_snackPicker"
                     Title="Select Meal"
-                    HorizontalOptions="Fill"/>
+                    HorizontalOptions="Fill" />
 
             <Label Grid.Row="4" Grid.Column="0"
                    Text="Lunch:"
                    FontSize="16"
                    VerticalOptions="Center"
-                   HorizontalOptions="Start"/>
+                   HorizontalOptions="Start" />
             <Picker Grid.Row="4" Grid.Column="1"
                     x:Name="_lunchPicker"
                     Title="Select Meal"
-                    HorizontalOptions="Fill"/>
+                    HorizontalOptions="Fill" />
 
             <Label Grid.Row="5" Grid.Column="0"
                    Text="Dinner:"
                    FontSize="16"
                    VerticalOptions="Center"
-                   HorizontalOptions="Start"/>
+                   HorizontalOptions="Start" />
             <Picker Grid.Row="5" Grid.Column="1"
                     x:Name="_dinnerPicker"
                     Title="Select Meal"
-                    HorizontalOptions="Fill"/>
-            
-            
+                    HorizontalOptions="Fill" />
+
+
             <Label Grid.Row="6" Grid.Column="0"
                    Text="Workout today?"
                    FontSize="16"
-                   VerticalOptions="Center"/>
+                   VerticalOptions="Center" />
 
             <HorizontalStackLayout Grid.Row="6" Grid.Column="1">
-                   <RadioButton x:Name="_radioYes" Content="Yes" GroupName="WorkoutDay" 
-                                CheckedChanged="_radioYes_CheckedChanged"/>
-                   <RadioButton x:Name="_radioNo" Content="No" GroupName="WorkoutDay"
-                                CheckedChanged="_radioNo_CheckedChanged"/>
+                <RadioButton x:Name="_radioYes" Content="Yes" GroupName="WorkoutDay"
+                             CheckedChanged="_radioYes_CheckedChanged" />
+                <RadioButton x:Name="_radioNo" Content="No" GroupName="WorkoutDay"
+                             CheckedChanged="_radioNo_CheckedChanged" />
             </HorizontalStackLayout>
-            
+
             <Label Grid.Row="7" Grid.Column="0"
                    x:Name="_workoutLabel"
                    Text="Workout:"
                    FontSize="16"
                    IsVisible="False"
-                   VerticalOptions="Center"/>
+                   VerticalOptions="Center" />
 
             <Picker Grid.Row="7" Grid.Column="1"
                     x:Name="_workoutPicker"
                     Title="Select Workout"
                     IsVisible="False"
-                    HorizontalOptions="Fill"/>
-            
-            
+                    HorizontalOptions="Fill" />
+
+
             <Label Grid.Row="8" Grid.Column="0"
                    Text="Nutritional Value:"
                    FontSize="16"
                    VerticalOptions="Center"
-                   HorizontalOptions="Start"/>
+                   HorizontalOptions="Start" />
             <Label Grid.Row="8" Grid.Column="1"
                    x:Name="_nutritionalValueLabel"
                    Text="0 cals"
                    FontSize="16"
                    FontAttributes="Bold"
                    VerticalOptions="Center"
-                   HorizontalOptions="Start"/>
+                   HorizontalOptions="Start" />
 
             <Button Grid.Row="9" Grid.Column="0"
                     Grid.ColumnSpan="2"
@@ -120,71 +121,80 @@
                     HorizontalOptions="Center"
                     WidthRequest="150"
                     Margin="0,10,0,0"
-                    Clicked="_btnPlannerSave_OnClicked"
-                    />
-            
-            
+                    Clicked="_btnPlannerSave_OnClicked" />
             <!-- the list for the days and meals that the user will pick -->
             <Border Grid.Row="10" Grid.Column="0"
                     Grid.ColumnSpan="2"
                     Margin="0,10,0,0"
                     Padding="10"
                     Stroke="Gray"
-                    StrokeThickness="1"
-                    >
-                   <VerticalStackLayout>
-                          <!--  table header -->
-                          <Grid ColumnDefinitions="*, *, *, *, *, *, *"
-                                BackgroundColor="Blue"
-                                Padding="10">
-                                 <Label Grid.Column="0" Text="Date" FontAttributes="Bold" />
-                                 <Label Grid.Column="1" Text="Meals" FontAttributes="Bold" />
-                                 <Label Grid.Column="2" Text="Workout" FontAttributes="Bold" />
-                                 <Label Grid.Column="3" Text="Cal Eaten" FontAttributes="Bold" />
-                                 <Label Grid.Column="4" Text="Cal Burned" FontAttributes="Bold" />
-                                 <Label Grid.Column="5" Text="Net Cal" FontAttributes="Bold" />
-                                 <Label Grid.Column="6" Text="Status" FontAttributes="Bold" />
-                          </Grid>
-                          
-                            <CollectionView x:Name="_mealPlansList" HeightRequest="250">
-                             <CollectionView.ItemTemplate >
-                                 <DataTemplate>
-                                        <Frame Margin="0,5,0,5" Padding="10">
-                                               <Grid ColumnDefinitions="*, *, *, *, *,  *, *">
-                                                      <Label Grid.Column="0"
-                                                             Text="{Binding Date, StringFormat='{0:MMM dd}'}"
-                                                             FontAttributes="Bold"
-                                                             VerticalOptions="Center"/>
-                                                      
-                                                      <Label Grid.Column="1"
-                                                             Text="{Binding Meals}"
-                                                             VerticalOptions="Center"/>
-                                                      <Label Grid.Column="2"
-                                                             Text="{Binding Workout}"
-                                                             VerticalOptions="Center"/>
-                                                      
-                                                      <Label Grid.Column="3"
-                                                             Text="{Binding CaloriesEaten}"
-                                                             VerticalOptions="Center"/>
-                                                      <Label Grid.Column="4"
-                                                             Text="{Binding CaloriesBurned}"
-                                                             VerticalOptions="Center"/>
-                                                      <Label Grid.Column="5"
-                                                             Text="{Binding NetCalories}"
-                                                             VerticalOptions="Center"/>
-                                                      <Label Grid.Column="6"
-                                                             Text="{Binding Status}"
-                                                             VerticalOptions="Center"/>
-                                               </Grid>
-                                        </Frame>
-                                 </DataTemplate>
-                                    </CollectionView.ItemTemplate>
-                          
-                             </CollectionView>
-                         </VerticalStackLayout>
-                   
+                    StrokeThickness="1">
+                <VerticalStackLayout>
+                    <!--  table header -->
+                    <Grid ColumnDefinitions="*, *, *, *, *, *, *"
+                          BackgroundColor="Blue"
+                          Padding="10">
+                        <Label Grid.Column="0" Text="Date" FontAttributes="Bold" />
+                        <Label Grid.Column="1" Text="Meals" FontAttributes="Bold" />
+                        <Label Grid.Column="2" Text="Workout" FontAttributes="Bold" />
+                        <Label Grid.Column="3" Text="Cal Eaten" FontAttributes="Bold" />
+                        <Label Grid.Column="4" Text="Cal Burned" FontAttributes="Bold" />
+                        <Label Grid.Column="5" Text="Net Cal" FontAttributes="Bold" />
+                        <Label Grid.Column="6" Text="Status" FontAttributes="Bold" />
+                    </Grid>
+                    <CollectionView x:Name="_mealPlansList" HeightRequest="250">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame Margin="0,5,0,5" Padding="10">
+                                    <Grid ColumnDefinitions="*, *, *, *, *,  *, *">
+                                        <Label Grid.Column="0"
+                                               Text="{Binding Date, StringFormat='{0:MMM dd}'}"
+                                               FontAttributes="Bold"
+                                               VerticalOptions="Center" />
+
+                                        <Label Grid.Column="1"
+                                               Text="{Binding Meals}"
+                                               VerticalOptions="Center" />
+                                        <Label Grid.Column="2"
+                                               Text="{Binding Workout}"
+                                               VerticalOptions="Center" />
+
+                                        <Label Grid.Column="3"
+                                               Text="{Binding CaloriesEaten}"
+                                               VerticalOptions="Center" />
+                                        <Label Grid.Column="4"
+                                               Text="{Binding CaloriesBurned}"
+                                               VerticalOptions="Center" />
+                                        <Label Grid.Column="5"
+                                               Text="{Binding NetCalories}"
+                                               VerticalOptions="Center" />
+                                        <Label Grid.Column="6"
+                                               Text="{Binding Status}"
+                                               VerticalOptions="Center" />
+                                    </Grid>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+
+                    </CollectionView>
+                </VerticalStackLayout>
             </Border>
-            
+
+            <HorizontalStackLayout Grid.Row="11" Grid.Column="0"
+
+                                   Grid.ColumnSpan="2"
+                                   x:Name="_navigationBtn"
+                                   IsVisible="True"
+                                   Spacing="10"
+                                   Margin="0,10,0,0"
+                                   HorizontalOptions="Center"
+                                   >
+                   <Button Text="Browse Recipes" x:Name="_btnGoToRecipes" />
+                   <Button Text="Browse Workout" x:Name="_btnGoToWorkOut" />
+
+
+            </HorizontalStackLayout>
+
         </Grid>
     </ScrollView>
 
