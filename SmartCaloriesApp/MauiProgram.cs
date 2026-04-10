@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using SmartCaloriesLibrary;
 
 namespace SmartCaloriesApp;
 
@@ -15,11 +16,12 @@ public static class MauiProgram
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
             });
 
-        //create application services and prepare pages for dependency injection
-        builder.Services.AddSingleton<UserPage>();
-        builder.Services.AddSingleton<Planner>();
-        builder.Services.AddSingleton<ShoppingList>();
-        builder.Services.AddSingleton<DayPage>();
+        builder.Services.AddSingleton<User>(); 
+
+        builder.Services.AddTransient<UserPage>();
+        builder.Services.AddTransient<Planner>();
+        builder.Services.AddTransient<ShoppingList>();
+        builder.Services.AddTransient<DayPage>();
 
         return builder.Build();
     }

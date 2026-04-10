@@ -12,9 +12,10 @@ public partial class Planner : ContentPage
 {
 
 	private ObservableCollection<DaySummary> _dayPlans = new ObservableCollection<DaySummary>();
-	private UserPage _user;
-    public Planner(UserPage user)
+	private User _user;
+    public Planner(User user)
     {
+		_user = user;
         InitializeComponent();
         _mealPlansList.ItemsSource = _dayPlans;
 	}
@@ -22,7 +23,8 @@ public partial class Planner : ContentPage
     protected override void OnAppearing()
 	{
 		base.OnAppearing();
-		LoadPickers();
+        _txtCalories.Text = ((int)_user.Calories).ToString();
+        LoadPickers();
 	}
 
 	private void LoadPickers()

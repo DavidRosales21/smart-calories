@@ -15,24 +15,25 @@ public class User
     private string _gender;
     private int _activity;
     private int _days;
+    private double _calories;
     #endregion
     #region Constructor
-    public User(string name, double crtWeight, double trgtWeight, double height, int age, string gender, int activity, int days)
+    public User()
     {
-        _name = name;
-        _crtWeight = crtWeight;
-        _trgtWeight = trgtWeight;
-        _height = height;
-        _age = age;
-        _gender = gender;
-        _activity = activity;
-        _days = days;
+        _name = "";
+        _crtWeight = 0;
+        _trgtWeight = 0;
+        _height = 0;
+        _age = 0;
+        _gender = "";
+        _activity = 0;
+        _days = 0;
+        _calories = 0;
     }
     #endregion
     #region Methods
-    public double CalcDailyCalories()
+    public void CalcDailyCalories()
     {
-        double dailyCalories = 0;
         double totalDailyEnergy = 0;
         double basalMetabolicRate = (10 * _crtWeight) + (6.25 * _height) - (5 * _age);
         if(_gender == "Male")
@@ -66,10 +67,7 @@ public class User
 
         double totalCalorieDiffrence = (_trgtWeight - _crtWeight) * 7700;
         double dailyAdjustement = totalCalorieDiffrence / _days;
-        dailyCalories = totalDailyEnergy + dailyAdjustement;
-
-
-        return dailyCalories;
+        _calories = totalDailyEnergy + dailyAdjustement;
     }
     #endregion
     #region Properties
@@ -178,6 +176,19 @@ public class User
         set
         {
             _days = value;
+        }
+    }
+
+    public double Calories
+    {
+        get
+        {
+            return _calories;
+        }
+
+        set
+        {
+            _calories = value;
         }
     }
     #endregion
