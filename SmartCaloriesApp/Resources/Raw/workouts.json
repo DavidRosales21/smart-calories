@@ -5,7 +5,7 @@
       "duration": 30,
       "caloriesBurned": 300,
       "description": "Steady-state running at a comfortable pace (about 6 mph / 10 km/h). Maintain even breathing throughout. Great for cardiovascular endurance and fat burning.",
-      "image": "images/running.png",
+      "image": "images/running.jpg",
       "category": "Cardio"
     },
     {
@@ -13,7 +13,7 @@
       "duration": 20,
       "caloriesBurned": 280,
       "description": "Fast-paced run at about 8 mph / 13 km/h. Push yourself but maintain form. Shorter duration due to higher intensity. Excellent for improving speed and VO2 max.",
-      "image": "images/running_fast.png",
+      "image": "images/running_fast.jpg",
       "category": "Cardio"
     },
     {
@@ -21,7 +21,7 @@
       "duration": 45,
       "caloriesBurned": 180,
       "description": "Walk at a brisk pace (about 3.5-4 mph). Keep arms swinging naturally. Low impact and suitable for all fitness levels. Great for active recovery days.",
-      "image": "images/walking.png",
+      "image": "images/walking.jpg",
       "category": "Cardio"
     },
     {
@@ -29,7 +29,7 @@
       "duration": 30,
       "caloriesBurned": 260,
       "description": "Moderate-intensity cycling on flat to gently rolling terrain. Maintain a cadence of 70-90 RPM. Builds leg strength and cardiovascular fitness with low joint impact.",
-      "image": "images/cycling.png",
+      "image": "images/cycling.jpg",
       "category": "Cardio"
     },
     {
@@ -37,7 +37,7 @@
       "duration": 30,
       "caloriesBurned": 220,
       "description": "Indoor cycling at moderate resistance. Alternate between seated and standing positions every 5 minutes. Good for rainy days or gym sessions.",
-      "image": "images/stationary_bike.png",
+      "image": "images/stationary_bike.jpg",
       "category": "Cardio"
     },
     {
@@ -45,7 +45,7 @@
       "duration": 15,
       "caloriesBurned": 200,
       "description": "Standard two-foot jump rope at moderate pace. Rest 30 seconds every 2 minutes if needed. One of the most efficient calorie-burning exercises. Improves coordination and agility.",
-      "image": "images/jump_rope.png",
+      "image": "images/jump_rope.jpg",
       "category": "Cardio"
     },
     {
@@ -53,7 +53,7 @@
       "duration": 30,
       "caloriesBurned": 250,
       "description": "Continuous freestyle swimming at a moderate pace. Focus on long, smooth strokes and bilateral breathing. Full-body workout with zero joint impact.",
-      "image": "images/swimming.png",
+      "image": "images/swimming.jpg",
       "category": "Cardio"
     },
     {
@@ -61,7 +61,7 @@
       "duration": 20,
       "caloriesBurned": 210,
       "description": "Steady rowing at moderate intensity. Drive with legs first, then lean back and pull with arms. Targets back, legs, and core simultaneously.",
-      "image": "images/rowing.png",
+      "image": "images/rowing.jpg",
       "category": "Cardio"
     },
     {
@@ -69,7 +69,7 @@
       "duration": 20,
       "caloriesBurned": 200,
       "description": "Climb stairs at a steady pace, either real stairs or a stair machine. Focus on pushing through your heels. Excellent for building leg and glute strength.",
-      "image": "images/stair_climbing.png",
+      "image": "images/stair_climbing.jpg",
       "category": "Cardio"
     },
     {
@@ -77,7 +77,7 @@
       "duration": 30,
       "caloriesBurned": 230,
       "description": "Moderate resistance on the elliptical with arms engaged. Keep posture upright and core tight. Low-impact alternative to running that still delivers a solid cardio workout.",
-      "image": "images/elliptical.png",
+      "image": "images/elliptical.jpg",
       "category": "Cardio"
     },
     {
@@ -85,7 +85,7 @@
       "duration": 15,
       "caloriesBurned": 100,
       "description": "Perform 4 sets of 15-20 push-ups with 60-second rest between sets. Keep body in a straight line from head to heels. Modify on knees if needed. Targets chest, shoulders, and triceps.",
-      "image": "images/pushups.png",
+      "image": "images/pushups.jpg",
       "category": "Strength"
     },
     {
@@ -93,7 +93,7 @@
       "duration": 15,
       "caloriesBurned": 110,
       "description": "Perform 4 sets of 6-10 reps with 90-second rest. Grip bar slightly wider than shoulder width for pull-ups, underhand for chin-ups. Use a resistance band for assistance if needed. Targets back and biceps.",
-      "image": "images/pullups.png",
+      "image": "images/pullups.jpg",
       "category": "Strength"
     },
     {
@@ -101,7 +101,7 @@
       "duration": 40,
       "caloriesBurned": 280,
       "description": "Circuit of 5 exercises: goblet squats, dumbbell rows, shoulder press, lunges, and bicep curls. 3 sets of 12 reps each, 45 seconds rest between exercises. Covers all major muscle groups in one session.",
-      "image": "images/dumbbell_workout.png",
+      "image": "images/dumbbell_workout.jpg",
       "category": "Strength"
     },
     {
@@ -109,7 +109,7 @@
       "duration": 15,
       "caloriesBurned": 95,
       "description": "Perform 4 sets of 20 squats with 60-second rest. Feet shoulder-width apart, push hips back and down until thighs are parallel to the floor. Keep chest up and knees tracking over toes. Targets quads, glutes, and hamstrings.",
-      "image": "images/squats.png",
+      "image": "images/squats.jpg",
       "category": "Strength"
     },
     {
@@ -117,7 +117,7 @@
       "duration": 10,
       "caloriesBurned": 50,
       "description": "Hold a forearm plank for 4 rounds of 45-60 seconds with 30-second rest. Keep body in a straight line, engage core, and avoid letting hips sag or pike up. Builds core stability and endurance.",
-      "image": "images/plank.png",
+      "image": "images/plank.jpg",
       "category": "Strength"
     },
     {
@@ -125,7 +125,7 @@
       "duration": 25,
       "caloriesBurned": 180,
       "description": "Perform 4 sets of 8-10 reps with 90-second rest. Hinge at the hips, keep the bar close to your body, and drive through your heels. Maintain a flat back throughout. Targets hamstrings, glutes, lower back, and grip.",
-      "image": "images/deadlifts.png",
+      "image": "images/deadlifts.jpg",
       "category": "Strength"
     },
     {
@@ -133,7 +133,7 @@
       "duration": 25,
       "caloriesBurned": 150,
       "description": "Perform 4 sets of 8-10 reps with 90-second rest. Grip the bar slightly wider than shoulder width. Lower to mid-chest, press up to lockout. Always use a spotter for heavy sets. Targets chest, shoulders, and triceps.",
-      "image": "images/bench_press.png",
+      "image": "images/bench_press.jpg",
       "category": "Strength"
     },
     {
@@ -141,7 +141,7 @@
       "duration": 15,
       "caloriesBurned": 90,
       "description": "Perform 3 sets of 12 reps per leg with 60-second rest. Step forward, lower until both knees are at 90 degrees, push back to start. Keep torso upright. Targets quads, glutes, and balance.",
-      "image": "images/lunges.png",
+      "image": "images/lunges.jpg",
       "category": "Strength"
     },
     {
@@ -149,7 +149,7 @@
       "duration": 20,
       "caloriesBurned": 250,
       "description": "High Intensity Interval Training: 30 seconds work, 15 seconds rest for 4 rounds. Exercises: burpees, mountain climbers, jump squats, high knees. Maximum effort during work periods. Burns calories long after the workout ends.",
-      "image": "images/hiit.png",
+      "image": "images/hiit.jpg",
       "category": "HIIT"
     },
     {
@@ -157,7 +157,7 @@
       "duration": 16,
       "caloriesBurned": 200,
       "description": "4-minute rounds (20 seconds max effort, 10 seconds rest, 8 rounds). Perform 4 different Tabata rounds with 1-minute rest between. Exercises: sprints, push-ups, squat jumps, bicycle crunches. Extremely time-efficient.",
-      "image": "images/tabata.png",
+      "image": "images/tabata.jpg",
       "category": "HIIT"
     },
     {
@@ -165,7 +165,7 @@
       "duration": 10,
       "caloriesBurned": 140,
       "description": "Perform 5 sets of 10 burpees with 45-second rest. Start standing, drop to push-up position, perform a push-up, jump feet to hands, and explode upward. Full-body conditioning at its most demanding.",
-      "image": "images/burpees.png",
+      "image": "images/burpees.jpg",
       "category": "HIIT"
     },
     {
@@ -173,7 +173,7 @@
       "duration": 30,
       "caloriesBurned": 140,
       "description": "Flowing sequence linking breath to movement. Includes sun salutations, warrior poses, balance poses, and a 5-minute savasana. Improves flexibility, balance, and mental clarity. Good for active recovery.",
-      "image": "images/yoga.png",
+      "image": "images/yoga.jpg",
       "category": "Flexibility"
     },
     {
@@ -181,7 +181,7 @@
       "duration": 20,
       "caloriesBurned": 60,
       "description": "Full-body static stretching: hold each stretch for 30 seconds. Covers hamstrings, quads, hip flexors, shoulders, chest, and back. Essential for recovery and injury prevention. Do after every workout.",
-      "image": "images/stretching.png",
+      "image": "images/stretching.jpg",
       "category": "Flexibility"
     },
     {
@@ -189,7 +189,7 @@
       "duration": 30,
       "caloriesBurned": 150,
       "description": "Mat-based Pilates focusing on core strength. Exercises: the hundred, roll-ups, single leg stretch, double leg stretch, criss-cross, and teaser. Controlled movements with emphasis on breathing and alignment.",
-      "image": "images/pilates.png",
+      "image": "images/pilates.jpg",
       "category": "Flexibility"
     },
     {
@@ -197,7 +197,7 @@
       "duration": 45,
       "caloriesBurned": 350,
       "description": "Full-court basketball game or pickup game. Involves running, jumping, lateral movement, and quick changes of direction. Great for cardio, agility, and coordination while having fun.",
-      "image": "images/basketball.png",
+      "image": "images/basketball.jpg",
       "category": "Sports"
     },
     {
@@ -205,7 +205,7 @@
       "duration": 45,
       "caloriesBurned": 340,
       "description": "Casual or competitive match. Constant movement including jogging, sprinting, and directional changes. Builds endurance, leg strength, and teamwork skills.",
-      "image": "images/soccer.png",
+      "image": "images/soccer.jpg",
       "category": "Sports"
     },
     {
@@ -213,7 +213,7 @@
       "duration": 30,
       "caloriesBurned": 260,
       "description": "Singles tennis match or rally practice. Involves short sprints, lateral shuffling, and overhead movements. Excellent for agility, hand-eye coordination, and cardiovascular fitness.",
-      "image": "images/tennis.png",
+      "image": "images/tennis.jpg",
       "category": "Sports"
     },
     {
@@ -221,7 +221,7 @@
       "duration": 20,
       "caloriesBurned": 220,
       "description": "3-minute rounds on the heavy bag with 1-minute rest between rounds. Mix jabs, crosses, hooks, and uppercuts. Keep feet moving and hands up. Outstanding stress relief and full-body cardio.",
-      "image": "images/boxing.png",
+      "image": "images/boxing.jpg",
       "category": "Sports"
     },
     {
@@ -229,7 +229,7 @@
       "duration": 10,
       "caloriesBurned": 100,
       "description": "Perform 4 sets of 30 seconds with 30-second rest. Start in push-up position, rapidly alternate driving knees to chest. Keep hips level and core engaged. Targets core, shoulders, and hip flexors while elevating heart rate.",
-      "image": "images/mountain_climbers.png",
+      "image": "images/mountain_climbers.jpg",
       "category": "HIIT"
     },
     {
@@ -237,7 +237,7 @@
       "duration": 25,
       "caloriesBurned": 130,
       "description": "Full-body circuit using resistance bands: banded squats, lateral walks, bicep curls, tricep extensions, and shoulder pull-aparts. 3 sets of 15 reps each. Portable and joint-friendly. Great for home workouts.",
-      "image": "images/resistance_bands.png",
+      "image": "images/resistance_bands.jpg",
       "category": "Strength"
     }
   ]

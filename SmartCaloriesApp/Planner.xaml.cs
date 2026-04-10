@@ -11,14 +11,17 @@ namespace SmartCaloriesApp;
 public partial class Planner : ContentPage
 {
 
-	private ObservableCollection<DaySummary> _dayPlans = new ObservableCollection<DaySummary>();
-	private User _user;
-    public Planner(User user)
+	private ObservableCollection<DaySummary> _dayPlans;
+	private UserPage _user;
+	private List<Day> _days;
+    public Planner(UserPage user)
     {
 		_user = user;
         InitializeComponent();
         _mealPlansList.ItemsSource = _dayPlans;
-	}
+        _dayPlans = new ObservableCollection<DaySummary>();
+		_days = new List<Day>();
+    }
 
     protected override void OnAppearing()
 	{
@@ -128,6 +131,9 @@ public partial class Planner : ContentPage
 			Status = day.GetCalorieStatus()
 		};
 
+		// adding a day object to the daylist 
+		_days.Add(day);
+
 		_dayPlans.Add(summary);
 		
 		_breakfastPicker.SelectedItem = null;
@@ -174,8 +180,8 @@ public partial class Planner : ContentPage
 		throw new NotImplementedException();
 	}
 
-	public ObservableCollection<DaySummary> DayPlans
+	public List<Day> Days
 	{
-		get{return _dayPlans;}
+		get{return _days;}
 	}
 }
