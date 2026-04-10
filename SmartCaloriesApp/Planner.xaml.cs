@@ -11,17 +11,13 @@ namespace SmartCaloriesApp;
 public partial class Planner : ContentPage
 {
 
-	private ObservableCollection<DaySummary> _dayPlans = new ObservableCollection<DaySummary>();	
-    public Planner()
-    {	
-        InitializeComponent();
-        _mealPlansList.ItemsSource = _dayPlans;
-    }
-    public Planner(double calories)
+	private ObservableCollection<DaySummary> _dayPlans = new ObservableCollection<DaySummary>();
+	private UserPage _user;
+    public Planner(UserPage user)
     {
         InitializeComponent();
-        _txtCalories.Text = ((int)calories).ToString();
-
+        _mealPlansList.ItemsSource = _dayPlans;
+		_txtCalories.Text = ((int)user.CalcDailyCalories()).ToString(); 
     }
 
     protected override void OnAppearing()
