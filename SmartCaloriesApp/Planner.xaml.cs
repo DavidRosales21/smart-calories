@@ -13,7 +13,7 @@ public partial class Planner : ContentPage
 
 	private ObservableCollection<DaySummary> _dayPlans = new ObservableCollection<DaySummary>();	
     public Planner()
-    {
+    {	
         InitializeComponent();
         _mealPlansList.ItemsSource = _dayPlans;
     }
