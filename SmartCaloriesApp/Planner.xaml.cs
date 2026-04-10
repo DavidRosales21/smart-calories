@@ -8,6 +8,7 @@ using System.Collections.ObjectModel;
 
 namespace SmartCaloriesApp;
 
+
 public partial class Planner : ContentPage
 {
 
@@ -90,7 +91,7 @@ public partial class Planner : ContentPage
 		}
 		
 		DateTime date = _mealDatePicker.Date.Value;
-		Day day = new Day(date,2000);
+		Day day = new Day(date,_user.Calories);
 
 		if (_breakfastPicker.ItemsSource != null)
 		{
