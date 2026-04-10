@@ -41,10 +41,41 @@ public partial class Planner : ContentPage
 		_snackPicker.ItemsSource = App.Library.GetMealsByType("Snack");
 	}
 
-	private void _btnPlannerSave_OnClicked(object? sender, EventArgs e)
+	private async void _btnPlannerSave_OnClicked(object? sender, EventArgs e)
 	{
+		string selectedDay = _mealDatePicker.Date.Value.ToString("MMM dd");
+		// date validation that is not selected before 
+		if (_dayPlans.Any(d => d.Date == selectedDay))
+		{
+			await	DisplayAlert("Date Taken"," You already have a plan for this day. Please select a different date.", "OK");
+			return;
+		}
 		
+		// meals validation to make sure the user have selected it before saving 
 		
+		if (_breakfastPicker.SelectedItem == null)
+		{
+			await DisplayAlert("Missing Meal", "Please select a Breakfast.", "OK");
+			return;
+		}
+
+		if (_snackPicker.SelectedItem == null)
+		{
+			await DisplayAlert("Missing Meal", "Please select a Snack.", "OK");
+		}
+		
+		if (_lunchPicker.SelectedItem == null)
+		{
+			await DisplayAlert("Missing Meal", "Please select a Lunch.", "OK");
+			return;
+		}
+
+		
+		if (_dinnerPicker.SelectedItem == null)
+		{
+			await DisplayAlert("Missing Meal", "Please select a Dinner.", "OK");
+			return;
+		}
 		
 		DateTime date = _mealDatePicker.Date.Value;
 		Day day = new Day(date,2000);
@@ -89,6 +120,16 @@ public partial class Planner : ContentPage
 		};
 
 		_dayPlans.Add(summary);
+		
+		_breakfastPicker.SelectedItem = null;
+		_lunchPicker.SelectedItem = null;
+		_dinnerPicker.SelectedItem = null;
+		_snackPicker.SelectedItem = null;
+		_workoutPicker.SelectedItem = null;
+		_radioYes.IsChecked = false;
+		_radioNo.IsChecked = false;
+		_workoutPicker.IsVisible = false;
+		_workoutLabel.IsVisible = false;
 
 	}
 
