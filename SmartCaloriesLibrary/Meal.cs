@@ -11,6 +11,7 @@ namespace SmartCaloriesLibrary
     /// </summary>
     public class Meal:FoodItem
     {
+        
         private string _mealImage;
         private string _reciepe;
         private List<Ingredient> _ingredientList;
