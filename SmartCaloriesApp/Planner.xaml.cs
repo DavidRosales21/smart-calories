@@ -12,9 +12,9 @@ public partial class Planner : ContentPage
 {
 
 	private ObservableCollection<DaySummary> _dayPlans;
-	private UserPage _user;
+	private User _user;
 	private List<Day> _days;
-    public Planner(UserPage user)
+    public Planner(User user)
     {
 		_user = user;
         InitializeComponent();
