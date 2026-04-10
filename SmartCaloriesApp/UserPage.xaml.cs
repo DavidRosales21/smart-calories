@@ -56,7 +56,6 @@ public partial class UserPage : ContentPage
         bool nextPage = await DisplayAlertAsync("Target",data,"Yes", "No, Make Changes!!");
         if(nextPage)
         {
-            await Navigation.PushAsync(new Planner(user));
         }
 
     }

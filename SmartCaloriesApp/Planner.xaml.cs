@@ -17,8 +17,7 @@ public partial class Planner : ContentPage
     {
         InitializeComponent();
         _mealPlansList.ItemsSource = _dayPlans;
-		_txtCalories.Text = ((int)user.CalcDailyCalories()).ToString(); 
-    }
+	}
 
     protected override void OnAppearing()
 	{

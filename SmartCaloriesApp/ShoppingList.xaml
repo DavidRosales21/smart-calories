@@ -4,13 +4,7 @@
              x:Class="SmartCaloriesApp.ShoppingList">
     <Grid RowDefinitions="Auto, Auto ,*" ColumnDefinitions="*,*"
           Margin="20">
-        <Border 
-            HorizontalOptions="Center" 
-            Background="#8FABe4" 
-            Stroke="#8FABe4"
-            Grid.Row="0"
-            Grid.ColumnSpan="2"
-            Padding="10">
+        <Border HorizontalOptions="Center" Background="#8FABe4" Stroke="#8FABe4" Grid.Row="0" Grid.ColumnSpan="2" Padding="10">
             <Label Text="Shopping List" TextColor="#EFECE3" FontSize="26"/>
         </Border>
         <HorizontalStackLayout Margin="20"  Grid.Row="1" Grid.Column="0" HorizontalOptions="Center">
@@ -21,8 +15,6 @@
             <Label Text="End Date:" Padding="20"  VerticalOptions="Center"/>
             <DatePicker x:Name="_pckEndDate"/>
         </HorizontalStackLayout>
-
-
         <Border 
              Grid.Row="2"
             Grid.ColumnSpan="2"
