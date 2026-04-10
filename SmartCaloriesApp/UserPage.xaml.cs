@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.Maui.Controls;
 using SmartCaloriesLibrary;
 
 namespace SmartCaloriesApp;
@@ -52,7 +56,7 @@ public partial class UserPage : ContentPage
         bool nextPage = await DisplayAlertAsync("Target",data,"Yes", "No, Make Changes!!");
         if(nextPage)
         {
-            await Navigation.PushAsync(new Planner());
+            await Navigation.PushAsync(new Planner(dailyCalories));
         }
 
     }

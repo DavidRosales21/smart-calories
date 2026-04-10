@@ -1,16 +1,30 @@
+using System;
+using System.Collections.ObjectModel;
 using System.Runtime.InteropServices;
+using Microsoft.Maui.Controls;
+using SmartCaloriesLibrary;
+using System.Collections.ObjectModel;
+
 
 namespace SmartCaloriesApp;
 
 public partial class Planner : ContentPage
 {
-	public Planner()
-	{
-		InitializeComponent();
-		
-	}
 
-	protected override void OnAppearing()
+	private ObservableCollection<DaySummary> _dayPlans = new ObservableCollection<DaySummary>();	
+    public Planner()
+    {
+        InitializeComponent();
+        _mealPlansList.ItemsSource = _dayPlans;
+    }
+    public Planner(double calories)
+    {
+        InitializeComponent();
+        _txtCalories.Text = ((int)calories).ToString();
+
+    }
+
+    protected override void OnAppearing()
 	{
 		base.OnAppearing();
 		LoadPickers();
@@ -25,5 +39,75 @@ public partial class Planner : ContentPage
 		_lunchPicker.ItemsSource = App.Library.GetMealsByType("Lunch");
 		_dinnerPicker.ItemsSource = App.Library.GetMealsByType("Dinner");
 		_snackPicker.ItemsSource = App.Library.GetMealsByType("Snack");
+	}
+
+	private void _btnPlannerSave_OnClicked(object? sender, EventArgs e)
+	{
+		DateTime date = _mealDatePicker.Date.Value;
+		Day day = new Day(date,2000);
+
+		if (_breakfastPicker.ItemsSource != null)
+		{
+			day.AddMeal((Meal)_breakfastPicker.SelectedItem);
+		}
+
+		if (_lunchPicker.ItemsSource != null)
+		{
+			day.AddMeal((Meal)_lunchPicker.SelectedItem);
+		}
+
+		if (_dinnerPicker.ItemsSource != null)
+		{
+			day.AddMeal((Meal)_lunchPicker.SelectedItem);
+		}
+
+		if (_snackPicker.ItemsSource != null)
+		{
+			day.AddMeal((Meal)_snackPicker.SelectedItem);
+		}
+
+		if (_radioYes.IsChecked && _workoutPicker.ItemsSource != null)
+		{
+			day.AddWorkout((Workout)_workoutPicker.SelectedItem);
+		}
+
+		_nutritionalValueLabel.Text = $"{day.GetNetCalories()} cals";
+
+		
+		DaySummary summary = new DaySummary
+		{
+			Date = day.Date.ToString("MMM dd"),
+			Meals = string.Join(", ", day.MealList.Select(m => m.Name)),
+			Workout = day.WorkoutList.Count > 0 ? day.WorkoutList[0].Name : "None",
+			CaloriesEaten = day.GetCaloriesEaten(),
+			CaloriesBurned = day.GetCaloriesBurned(),
+			NetCalories = day.GetNetCalories(),
+			Status = day.GetCalorieStatus()
+		};
+
+		_dayPlans.Add(summary);
+
+	}
+
+	private void _radioYes_CheckedChanged(object? sender, CheckedChangedEventArgs e)
+	{
+
+		if (e.Value)
+		{
+			_workoutLabel.IsVisible = true; 
+			_workoutPicker.IsVisible = true;
+			_workoutPicker.ItemsSource = App.Library.Workouts;
+			
+			
+		}
+	}
+
+	private void _radioNo_CheckedChanged(object? sender, CheckedChangedEventArgs e)
+	{
+		if (e.Value)
+		{
+			_workoutPicker.IsVisible = false;
+			_workoutLabel.IsVisible = false;
+		}
 	}
 }

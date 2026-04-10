@@ -16,7 +16,6 @@
         
         #endregion
         #region constructor
-
         public Day(DateTime date, double targetCalories)
         {
             _date = date;
@@ -34,7 +33,7 @@
             get { return _date; }
         }
 
-        public Double TargetCalories
+        public double TargetCalories
         {
             get { return _targetCalories; }
         }
