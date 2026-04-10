@@ -76,6 +76,18 @@ public partial class Planner : ContentPage
 			await DisplayAlert("Missing Meal", "Please select a Dinner.", "OK");
 			return;
 		}
+		// validation for the work out options 
+		if (!_radioNo.IsChecked && !_radioYes.IsChecked)
+		{
+			await DisplayAlert("Missing Selection", "Please select Yes or No for  workOut ", "OK");
+			return;
+		}
+
+		if (_radioYes.IsChecked && _workoutPicker == null)
+		{
+			await DisplayAlert("Missing WorkOut ", "Please select a Workout ", "OK");
+			return;
+		}
 		
 		DateTime date = _mealDatePicker.Date.Value;
 		Day day = new Day(date,2000);
