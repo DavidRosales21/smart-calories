@@ -15,17 +15,17 @@
         <Tab Title="Planner">
             <ShellContent
                ContentTemplate="{DataTemplate local:Planner}"
-                Route="Planner" />
+               Route="Planner" />
         </Tab>
         <Tab Title="Shopping List">
             <ShellContent
-    ContentTemplate="{DataTemplate local:ShoppingList}"
-    Route="ShoppingList" />
+                ContentTemplate="{DataTemplate local:ShoppingList}"
+                Route="ShoppingList" />
         </Tab>
         <Tab Title="Day">
             <ShellContent
-ContentTemplate="{DataTemplate local:DayPage}"
-Route="Day" />
+                ContentTemplate="{DataTemplate local:DayPage}"
+                Route="Day" />
         </Tab>
     </TabBar>
 </Shell>

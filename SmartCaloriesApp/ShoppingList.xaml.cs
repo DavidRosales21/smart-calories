@@ -5,6 +5,5 @@ public partial class ShoppingList : ContentPage
 	public ShoppingList()
 	{
 		InitializeComponent();
-		_lstShoppingList=
 	}
 }

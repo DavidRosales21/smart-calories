@@ -11,10 +11,12 @@ namespace SmartCaloriesApp;
 public partial class Planner : ContentPage
 {
 
-	private ObservableCollection<DaySummary> _dayPlans = new ObservableCollection<DaySummary>();	
-    public Planner()
+	private ObservableCollection<DaySummary> _dayPlans = new ObservableCollection<DaySummary>();
+	private UserPage _user;
+    public Planner(UserPage user)
     {
         InitializeComponent();
+		_user = user;
         _mealPlansList.ItemsSource = _dayPlans;
     }
     public Planner(double calories)
@@ -165,5 +167,9 @@ public partial class Planner : ContentPage
 			_workoutPicker.IsVisible = false;
 			_workoutLabel.IsVisible = false;
 		}
+	}
+	public ObservableCollection<DaySummary> DayPlans
+	{
+		get { return _dayPlans; }
 	}
 }
