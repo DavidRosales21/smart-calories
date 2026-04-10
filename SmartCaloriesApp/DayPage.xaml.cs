@@ -2,6 +2,7 @@ using System.Collections.ObjectModel;
 
 namespace SmartCaloriesApp;
 using SmartCaloriesLibrary;
+using System.Linq.Expressions;
 
 public partial class DayPage : ContentPage
 {
@@ -23,16 +24,38 @@ public partial class DayPage : ContentPage
 
     private void OnNextReciepe(object sender, EventArgs e)
     {
-        _txtMeal.Text = _days[_crtDay].MealList[_crtMealIndex].Name;
-        _crtMealIndex += 1;
-        _txtReciepe.Text = _days[_crtDay].MealList[_crtMealIndex].Recipe;
-        _lstIngredients.ItemsSource = _days[_crtDay].MealList[_crtMealIndex].Ingredients;
+        try
+        {
+            if (_crtMealIndex <= 3)
+            {
+                _crtMealIndex += 1;
+                _txtMeal.Text = _days[_crtDay].MealList[_crtMealIndex].Name;
+                _txtReciepe.Text = _days[_crtDay].MealList[_crtMealIndex].Recipe;
+                _lstIngredients.ItemsSource = _days[_crtDay].MealList[_crtMealIndex].Ingredients;
+            }
+        }
+        catch(Exception ex)
+        {
+
+        }
+          
     }
-    private void OnPrevReciepe(object sender, EventArgs e)
+    private async void OnPrevReciepe(object sender, EventArgs e)
     {
-        _crtMealIndex -= 1;
-        _txtReciepe.Text = _days[_crtDay].MealList[_crtMealIndex].Recipe;
-        _lstIngredients.ItemsSource = _days[_crtDay].MealList[_crtMealIndex].Ingredients;
+        try
+        {
+        if (_crtMealIndex >= 0)
+        {
+            _crtMealIndex -= 1;
+            _txtReciepe.Text = _days[_crtDay].MealList[_crtMealIndex].Recipe;
+            _lstIngredients.ItemsSource = _days[_crtDay].MealList[_crtMealIndex].Ingredients;
+            _txtMeal.Text= _days[_crtDay].MealList[_crtMealIndex].Name;
+        }
+        }
+        catch(Exception ex)
+        {
+            await DisplayAlertAsync("rent wheels", $"Unexpected error in the reciepe book. \n\n Error: {ex.Message}", "ok");
+        }
     }
 
     private async void OnDateSelected(object sender, DateChangedEventArgs e)
