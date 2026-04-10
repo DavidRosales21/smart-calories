@@ -166,4 +166,19 @@ public partial class Planner : ContentPage
 			_workoutLabel.IsVisible = false;
 		}
 	}
+
+	private async void _btnGoToRecipes_OnClicked(object? sender, EventArgs e)
+	{
+		await Shell.Current.GoToAsync("//Day");
+	}
+
+	private void _btnGoToWorkOut_OnClicked(object? sender, EventArgs e)
+	{
+		throw new NotImplementedException();
+	}
+
+	public ObservableCollection<DaySummary> DayPlans
+	{
+		get{return _dayPlans;}
+	}
 }
