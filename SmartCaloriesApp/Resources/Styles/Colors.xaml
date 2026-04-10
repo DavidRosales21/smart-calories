@@ -41,4 +41,25 @@
     <SolidColorBrush x:Key="Gray600Brush" Color="{StaticResource Gray600}"/>
     <SolidColorBrush x:Key="Gray900Brush" Color="{StaticResource Gray900}"/>
     <SolidColorBrush x:Key="Gray950Brush" Color="{StaticResource Gray950}"/>
+    
+    
+    
+    <!--  Cutom colors for the whole project -->
+    
+    <!-- Smart Calories - Energetic Fitness Theme -->
+    <Color x:Key="PageBackground">#1A1A2E</Color>
+    <Color x:Key="CardBackground">#16213E</Color>
+    <Color x:Key="HeaderBackground">#0F3460</Color>
+    <Color x:Key="BtnPrimary">#E94560</Color>
+    <Color x:Key="BtnPrimaryDark">#C73652</Color>
+    <Color x:Key="BtnSecondary">#FF6B35</Color>
+    <Color x:Key="BtnSecondaryDark">#E55A25</Color>
+    <Color x:Key="TextPrimary">#FFFFFF</Color>
+    <Color x:Key="TextSecondary">#A8A8B3</Color>
+    <Color x:Key="StatusSuccess">#4CAF50</Color>
+    <Color x:Key="StatusWarning">#FF9800</Color>
+    <Color x:Key="StatusError">#F44336</Color>
+    <Color x:Key="BorderColor">#0F3460</Color>
+    
+    
 </ResourceDictionary>

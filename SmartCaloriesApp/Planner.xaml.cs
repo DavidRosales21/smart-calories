@@ -12,11 +12,10 @@ public partial class Planner : ContentPage
 {
 
 	private ObservableCollection<DaySummary> _dayPlans = new ObservableCollection<DaySummary>();
-	private User _user;
-    public Planner(User user)
+	private UserPage _user;
+    public Planner(UserPage user)
     {
         InitializeComponent();
-		_user = user;
         _mealPlansList.ItemsSource = _dayPlans;
 		_txtCalories.Text = ((int)user.CalcDailyCalories()).ToString(); 
     }
@@ -163,8 +162,19 @@ public partial class Planner : ContentPage
 			_workoutLabel.IsVisible = false;
 		}
 	}
+
+	private async void _btnGoToRecipes_OnClicked(object? sender, EventArgs e)
+	{
+		await Shell.Current.GoToAsync("//Day");
+	}
+
+	private void _btnGoToWorkOut_OnClicked(object? sender, EventArgs e)
+	{
+		throw new NotImplementedException();
+	}
+
 	public ObservableCollection<DaySummary> DayPlans
 	{
-		get { return _dayPlans; }
+		get{return _dayPlans;}
 	}
 }

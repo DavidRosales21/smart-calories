@@ -2,7 +2,9 @@
 
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SmartCaloriesApp.Planner">
+             x:Class="SmartCaloriesApp.Planner"
+             BackgroundColor="{StaticResource PageBackground}"
+             >
 
     <ScrollView>
         <Grid Padding="20" RowSpacing="15" ColumnSpacing="10"
@@ -189,8 +191,8 @@
                                    Margin="0,10,0,0"
                                    HorizontalOptions="Center"
                                    >
-                   <Button Text="Browse Recipes" x:Name="_btnGoToRecipes" />
-                   <Button Text="Browse Workout" x:Name="_btnGoToWorkOut" />
+                   <Button Text="Browse Recipes" x:Name="_btnGoToRecipes" Clicked="_btnGoToRecipes_OnClicked"/>
+                   <Button Text="Browse Workout" x:Name="_btnGoToWorkOut" Clicked="_btnGoToWorkOut_OnClicked"/>
 
 
             </HorizontalStackLayout>
