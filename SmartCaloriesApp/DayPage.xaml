@@ -9,7 +9,8 @@
                 Grid.Row="0"
                 Margin="20"
                 BackgroundColor="#EFECE3"
-                TextColor="Black">
+                TextColor="Black"
+                DateSelected="OnDateSelected" >
             </DatePicker>
         <Border Grid.Row="1"
                 HorizontalOptions="Center" 
