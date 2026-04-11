@@ -9,7 +9,6 @@ public partial class ShoppingList : ContentPage
 	{
 		InitializeComponent();
 		_days = planner.Days;
-		_days[1].
 
 
     }
