@@ -16,14 +16,13 @@
         </Border>
         <HorizontalStackLayout Margin="20"  Grid.Row="1" Grid.Column="0" HorizontalOptions="Center">
             <Label Text="Start Date:" Padding="20"  VerticalOptions="Center"/>
-            <DatePicker x:Name="_pckStartDate" TextColor="Black" Background="White"/>
+                <DatePicker x:Name="_pckStartDate" TextColor="Black" Background="White" DateSelected="OnDateChanged"/>
         </HorizontalStackLayout>
-            <HorizontalStackLayout Margin="20"  Grid.Row="1" Grid.Column="1" HorizontalOptions="Center">
-                <Label Text="End Date:" Padding="20"  VerticalOptions="Center"/>
+        <HorizontalStackLayout Margin="20"  Grid.Row="1" Grid.Column="1" HorizontalOptions="Center">
+            <Label Text="End Date:" Padding="20"  VerticalOptions="Center"/>
                 <DatePicker x:Name="_pckEndDate" TextColor="Black" Background="White"/>
-            </HorizontalStackLayout>
-            
-            <Border 
+        </HorizontalStackLayout>
+        <Border 
              Grid.Row="2"
             Grid.ColumnSpan="2"
              Margin="20"

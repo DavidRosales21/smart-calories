@@ -1,8 +1,8 @@
 ﻿    using System;
     using System.Collections.Generic;
     using System.Text;
-
-    namespace SmartCaloriesLibrary
+/// David
+namespace SmartCaloriesLibrary
     {
         /// <summary>
         /// The FoodItem class represents the base class for a meal or ingredient

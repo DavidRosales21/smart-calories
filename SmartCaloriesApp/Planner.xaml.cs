@@ -105,7 +105,7 @@ public partial class Planner : ContentPage
 
 		if (_dinnerPicker.ItemsSource != null)
 		{
-			day.AddMeal((Meal)_lunchPicker.SelectedItem);
+			day.AddMeal((Meal)_dinnerPicker.SelectedItem);
 		}
 
 		if (_snackPicker.ItemsSource != null)
