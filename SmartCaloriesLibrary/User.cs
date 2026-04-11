@@ -80,6 +80,10 @@ public class User
 
         set
         {
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                throw new ArgumentException("The name of the user cannot be empty.");
+            }
             _name = value;
         }
     }
@@ -147,7 +151,7 @@ public class User
         {
             if (string.IsNullOrEmpty(value))
             {
-                throw new Exception("The gender cant be empty");
+                throw new ArgumentException("The gender of the user cannot be empty");
             }
             _gender = value;
         }
