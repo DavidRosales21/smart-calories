@@ -4,6 +4,7 @@
              x:Class="SmartCaloriesApp.DayPage"
              BackgroundColor="{StaticResource PageBackground}">
 
+    
     <Border Margin="20"
         Padding="35, 40"
         Stroke="#4A4A6A" 
