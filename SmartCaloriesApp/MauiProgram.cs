@@ -20,8 +20,8 @@ public static class MauiProgram
 
         builder.Services.AddTransient<UserPage>();
         builder.Services.AddSingleton<Planner>();
-        builder.Services.AddTransient<ShoppingList>();
-        builder.Services.AddTransient<DayPage>();
+        builder.Services.AddSingleton<ShoppingList>();
+        builder.Services.AddSingleton<DayPage>();
 
         return builder.Build();
     }

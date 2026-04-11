@@ -1,16 +1,20 @@
 using SmartCaloriesLibrary;
 using System.Collections.ObjectModel;
-
+/// David
 namespace SmartCaloriesApp;
 
 public partial class ShoppingList : ContentPage
 {
+    private Planner _planner;
     private List<Day> _days;
     private ObservableCollection<Ingredient> _shoppingList;
     public ShoppingList(Planner planner)
 	{
 		InitializeComponent();
-		_days = planner.Days;
+        _planner = planner;
+		_days = _planner.Days;
+        _shoppingList = new ObservableCollection<Ingredient>();
+        _lstShoppingList.ItemsSource = _shoppingList;
 
     }
 
@@ -18,7 +22,6 @@ public partial class ShoppingList : ContentPage
     {
         for(DateTime date = startDate; date <=endDate ;date=date.AddDays(1))
         {
-            _shoppingList = [];
             foreach(Day day in _days)
             {
                 if (day.Date == date)
@@ -41,7 +44,6 @@ public partial class ShoppingList : ContentPage
                 }
             }
         }
-        _lstShoppingList.ItemsSource = _shoppingList;
     }
 
     private void OnDateChanged (object sender, DateChangedEventArgs e)
