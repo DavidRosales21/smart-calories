@@ -43,10 +43,11 @@ public partial class DayPage : ContentPage
                 _txtMeal.Text = _days[_crtDay].MealList[_crtMealIndex].Name;
                 _txtReciepe.Text = _days[_crtDay].MealList[_crtMealIndex].Recipe;
                 _lstIngredients.ItemsSource = _days[_crtDay].MealList[_crtMealIndex].Ingredients;
+                _btnPrev.IsEnabled = true;
             }
             else
             {
-                
+                _btnNext.IsEnabled = false;
             }
         }
         catch(Exception ex)
@@ -59,13 +60,18 @@ public partial class DayPage : ContentPage
     {
         try
         {
-        if (_crtMealIndex >= 0)
-        {
-            _crtMealIndex -= 1;
-            _txtReciepe.Text = _days[_crtDay].MealList[_crtMealIndex].Recipe;
-            _lstIngredients.ItemsSource = _days[_crtDay].MealList[_crtMealIndex].Ingredients;
-            _txtMeal.Text= _days[_crtDay].MealList[_crtMealIndex].Name;
-        }
+            if (_crtMealIndex >= 0)
+            {
+                _crtMealIndex -= 1;
+                _txtReciepe.Text = _days[_crtDay].MealList[_crtMealIndex].Recipe;
+                _lstIngredients.ItemsSource = _days[_crtDay].MealList[_crtMealIndex].Ingredients;
+                _txtMeal.Text= _days[_crtDay].MealList[_crtMealIndex].Name;
+                _btnNext.IsEnabled = true;
+            }
+            else
+            {
+                _btnPrev.IsEnabled = false;
+            }
         }
         catch(Exception ex)
         {
@@ -92,6 +98,7 @@ public partial class DayPage : ContentPage
 
     private void searchPlan(DateTime date)
     {
+        //for each day in the days list search the requested date
         for (int dayIndex = 0; dayIndex<_days.Count; dayIndex++)
         foreach (Day day in _days)
         {

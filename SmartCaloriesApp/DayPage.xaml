@@ -23,11 +23,12 @@
                 Background="{StaticResource HeaderBackground}" 
                 Stroke="#8FABe4">
                 <HorizontalStackLayout>
-                    <Button Text="&lt;" 
-                        BackgroundColor="Red" 
-                        TextColor="#EFECE3" 
-                        FontSize="23"
-                        Clicked="OnPrevReciepe"
+                    <Button x:Name="_btnPrev"
+                            Text="&lt;" 
+                            BackgroundColor="Red" 
+                            TextColor="#EFECE3" 
+                            FontSize="23"
+                            Clicked="OnPrevReciepe"
                             Margin="5"/>
 
                     <Label x:Name="_txtMeal"
@@ -36,7 +37,8 @@
                        TextColor="#EFECE3" 
                        FontSize="26" VerticalTextAlignment="Center"/>
 
-                    <Button Text=">" 
+                    <Button Text=">"
+                        x:Name="_btnNext"
                         BackgroundColor="Red"
                         TextColor="#EFECE3" 
                         FontSize="26"
