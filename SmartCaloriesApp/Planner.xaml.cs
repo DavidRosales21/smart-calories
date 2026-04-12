@@ -118,6 +118,12 @@ public partial class Planner : ContentPage
 			day.AddWorkout((Workout)_workoutPicker.SelectedItem);
 		}
 
+		if (_radioYes.IsChecked && _workoutPicker.ItemsSource == null)
+		{
+			DisplayAlert("Missing Workout", "Please select a Workout ", "OK");
+			return;	
+		}
+
 		_nutritionalValueLabel.Text = $"{day.GetNetCalories()} cals";
 
 		
