@@ -97,4 +97,4 @@ Although each member was responsible for specific parts of the app, we all colla
 
 This is the UML diagram for the **Smart Calories** app.
 
-
+![Shopping List Page](images/UML.png)
