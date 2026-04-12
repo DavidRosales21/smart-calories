@@ -21,6 +21,7 @@ Our team **S.A.D** is made up of:
 ### Hossam Abdelaziz
 **Responsible for:**
 - Planner Page
+- Welcome Page
 - `DaySummary` Class
 - `DataLibrary` Class
 - `Workouts` Class
@@ -69,6 +70,9 @@ Although each member was responsible for specific parts of the app, we all colla
 
 ##  App Pages
 
+### User Information Page
+-Explains to the user the app 
+![Welcome page](images/welcome-page.png)
 ### User Information Page
 - Users enter their personal data
 - Define their goals for the app
