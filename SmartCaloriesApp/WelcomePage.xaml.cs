@@ -16,6 +16,7 @@ public partial class WelcomePage : ContentPage
     private async void OnStartClicked(object? sender, EventArgs e)
     {
         
-        await Navigation.PushAsync(new UserPage(new User()));
+        Application.Current!.Windows[0].Page = new AppShell();
+        
     }
 }
