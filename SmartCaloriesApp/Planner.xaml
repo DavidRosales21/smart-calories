@@ -330,9 +330,36 @@
                         HorizontalOptions="Fill"
                         Text="Save Plan"
                         TextColor="{StaticResource TextPrimary}" />
+                    
+                    <!--  NAVIGATION BUTTONS FOR THE DAY AND SHOPPING LIST   -->
+                    <HorizontalStackLayout
+                        x:Name="_navigationBtn"
+                        Grid.Row="7"
+                        HorizontalOptions="Center"
+                        IsVisible="False"
+                        Spacing="12">
+
+                        <Button
+                            x:Name="_btnGoToRecipes"
+                            BackgroundColor="{StaticResource BtnSecondary}"
+                            Clicked="_btnGoToRecipes_OnClicked"
+                            CornerRadius="14"
+                            HeightRequest="50"
+                            Text="Recipes &amp; WorkOut"
+                            TextColor="{StaticResource TextPrimary}" />
+
+                        <Button
+                            x:Name="_btnGoToWorkOut"
+                            BackgroundColor="{StaticResource BtnSecondary}"
+                            Clicked="_btnGoToWorkOut_OnClicked"
+                            CornerRadius="14"
+                            HeightRequest="50"
+                            Text="Shopping List"
+                            TextColor="{StaticResource TextPrimary}" />
+                    </HorizontalStackLayout>
 
                     <!--  SAVED PLANS TITLE  -->
-                    <VerticalStackLayout Grid.Row="7" Spacing="4">
+                    <VerticalStackLayout Grid.Row="8" Spacing="4">
 
                         <Label
                             FontAttributes="Bold"
@@ -348,7 +375,7 @@
 
                     <!--  SAVED PLANS LIST  -->
                     <Frame
-                        Grid.Row="8"
+                        Grid.Row="9"
                         Padding="12"
                         BackgroundColor="{StaticResource PageBackground}"
                         BorderColor="{StaticResource BorderColor}"
@@ -486,32 +513,7 @@
                         </VerticalStackLayout>
                     </Frame>
 
-                    <!--  NAVIGATION BUTTONS  -->
-                    <HorizontalStackLayout
-                        x:Name="_navigationBtn"
-                        Grid.Row="9"
-                        HorizontalOptions="Center"
-                        IsVisible="False"
-                        Spacing="12">
-
-                        <Button
-                            x:Name="_btnGoToRecipes"
-                            BackgroundColor="{StaticResource BtnSecondary}"
-                            Clicked="_btnGoToRecipes_OnClicked"
-                            CornerRadius="14"
-                            HeightRequest="50"
-                            Text="Browse Recipes"
-                            TextColor="{StaticResource TextPrimary}" />
-
-                        <Button
-                            x:Name="_btnGoToWorkOut"
-                            BackgroundColor="{StaticResource BtnSecondary}"
-                            Clicked="_btnGoToWorkOut_OnClicked"
-                            CornerRadius="14"
-                            HeightRequest="50"
-                            Text="Browse Workout"
-                            TextColor="{StaticResource TextPrimary}" />
-                    </HorizontalStackLayout>
+                  
 
                 </Grid>
             </Frame>

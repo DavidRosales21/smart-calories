@@ -118,6 +118,12 @@ public partial class Planner : ContentPage
 			day.AddWorkout((Workout)_workoutPicker.SelectedItem);
 		}
 
+		if (_radioYes.IsChecked && _workoutPicker.ItemsSource == null)
+		{
+			DisplayAlert("Missing Workout", "Please select a Workout ", "OK");
+			return;	
+		}
+
 		_nutritionalValueLabel.Text = $"{day.GetNetCalories()} cals";
 
 		
@@ -180,9 +186,9 @@ public partial class Planner : ContentPage
 		await Shell.Current.GoToAsync("//Day");
 	}
 
-	private void _btnGoToWorkOut_OnClicked(object? sender, EventArgs e)
+	private async void _btnGoToWorkOut_OnClicked(object? sender, EventArgs e)
 	{
-		throw new NotImplementedException();
+		await Shell.Current.GoToAsync("//ShoppingList");
 	}
 
 	public List<Day> Days

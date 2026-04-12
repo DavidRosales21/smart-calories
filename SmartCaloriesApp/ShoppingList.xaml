@@ -17,7 +17,7 @@
                 HorizontalOptions="Fill"
                 MaximumWidthRequest="1100">
 
-                <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="20">
+                <Grid RowDefinitions="Auto,Auto,Auto,Auto , Auto" RowSpacing="20">
 
                     <!--  PAGE HEADER  -->
                     <VerticalStackLayout Grid.Row="0" Spacing="6">
@@ -37,7 +37,7 @@
                     <!--  DATE RANGE SECTION  -->
                     <Grid
                         Grid.Row="1"
-                        ColumnDefinitions="*,*,*"
+                        ColumnDefinitions="*,*"
                         ColumnSpacing="16">
 
                         <!--  START DATE  -->
@@ -51,23 +51,20 @@
                             <VerticalStackLayout Spacing="8">
                                 <Label
                                     FontAttributes="Bold"
-                                    FontSize="16"
+                                    FontSize="20"
                                     Text="Start Date"
+                                    HorizontalTextAlignment="Center"
                                     TextColor="{StaticResource TextPrimary}" />
 
                                 <DatePicker
                                     x:Name="_pckStartDate"
+                                    Format="MMM dd, yyyy"
                                     BackgroundColor="{StaticResource CardBackground}"
-                                    HorizontalOptions="Fill"
-                                    TextColor="{StaticResource TextPrimary}" />
+                                    HorizontalOptions="Center"
+                                    TextColor="{StaticResource TextPrimary}"
+                                    VerticalOptions="Center"/>
                             </VerticalStackLayout>
                         </Frame>
-                        <!--  SEARCH BUTTON  -->
-                        <Button x:Name="_btnSearch"
-                                Grid.Column="1"
-                                Clicked="OnSearch"
-                                Text="Search"/>
-
 
                         <!--  END DATE  -->
                         <Frame
@@ -75,28 +72,39 @@
                             Padding="18"
                             BackgroundColor="{StaticResource PageBackground}"
                             BorderColor="{StaticResource BorderColor}"
-                            CornerRadius="18"
+                            CornerRadius="30"
                             HasShadow="False">
 
                             <VerticalStackLayout Spacing="8">
                                 <Label
                                     FontAttributes="Bold"
-                                    FontSize="16"
+                                    FontSize="20"
                                     Text="End Date"
+                                    HorizontalTextAlignment="Center"
                                     TextColor="{StaticResource TextPrimary}" />
 
                                 <DatePicker
                                     x:Name="_pckEndDate"
+                                    Format="MMM dd, yyyy"
                                     BackgroundColor="{StaticResource CardBackground}"
-                                    HorizontalOptions="Fill"
-                                    TextColor="{StaticResource TextPrimary}" />
+                                    HorizontalOptions="Center"
+                                    TextColor="{StaticResource TextPrimary}"
+                                    VerticalOptions="Center"/>
                             </VerticalStackLayout>
                         </Frame>
                     </Grid>
+                    
+                    <!--  SEARCH BUTTON  -->
+                    <Button x:Name="_btnSearch"
+                            Grid.Row="2"
+                            BackgroundColor="{StaticResource BtnPrimary}"
+
+                            Clicked="OnSearch"
+                            Text="Search"/>
 
                     <!--  INFO BOX  -->
                     <Frame
-                        Grid.Row="2"
+                        Grid.Row="3"
                         Padding="18"
                         BackgroundColor="{StaticResource HeaderBackground}"
                         BorderColor="{StaticResource BorderColor}"
@@ -120,7 +128,7 @@
                     </Frame>
 
                     <!--  SHOPPING LIST  -->
-                    <VerticalStackLayout Grid.Row="3" Spacing="10">
+                    <VerticalStackLayout Grid.Row="4" Spacing="10">
 
                         <Label
                             FontAttributes="Bold"

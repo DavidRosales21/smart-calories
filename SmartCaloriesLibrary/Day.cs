@@ -81,12 +81,19 @@
         // get the total calories burned and add it up from the workout list
         public double GetCaloriesBurned()
         {
-            double totalCaloriesBurned = 0;
-            foreach (Workout workout in _workoutList)
+            try
             {
-                totalCaloriesBurned += workout.CaloriesBurned;
+                double totalCaloriesBurned = 0;
+                foreach (Workout workout in _workoutList)
+                {
+                    totalCaloriesBurned += workout.CaloriesBurned;
+                }
+                return totalCaloriesBurned;
             }
-            return totalCaloriesBurned;
+            catch
+            {
+                return 0;
+            }
         }
         
         // calculate the net calories 
