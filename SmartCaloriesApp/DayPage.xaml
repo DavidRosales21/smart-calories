@@ -17,7 +17,7 @@
                 HorizontalOptions="Fill"
                 MaximumWidthRequest="1100">
 
-                <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto, Auto" RowSpacing="20">
+                <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto, Auto ,Auto" RowSpacing="20">
 
                     <!--  PAGE HEADER  -->
                     <VerticalStackLayout Grid.Row="0" Spacing="6">
@@ -219,6 +219,14 @@
                             TextColor="{StaticResource TextPrimary}" />
                     </Frame>
                     
+                    
+                    <Image x:Name="_workOutImage"
+                           Grid.Row="9"
+                           HeightRequest="200"
+                           Aspect="AspectFit"
+                           HorizontalOptions="Fill"
+                           IsVisible="True"
+                    />
                    
 
                 </Grid>

@@ -47,8 +47,9 @@ public partial class DayPage : ContentPage
         {
             if (_crtMealIndex <= 3)
             {
-                _crtMealIndex += 1;
                 _txtMeal.Text = _days[_crtDay].MealList[_crtMealIndex].Name;
+
+                _crtMealIndex += 1;
                 _mealImage.Source = ImageSource.FromFile(_days[_crtDay].MealList[_crtMealIndex].MealImage);
                 _txtReciepe.Text = _days[_crtDay].MealList[_crtMealIndex].Recipe;
                 _lstIngredients.ItemsSource = _days[_crtDay].MealList[_crtMealIndex].Ingredients;
@@ -92,33 +93,34 @@ public partial class DayPage : ContentPage
 
     private async void OnDateSelected(object sender, DateChangedEventArgs e)
     {
-        
         System.Diagnostics.Debug.WriteLine($"Total days in App.Days: {App.Days.Count}");
 
         try
         {
-        _crtDate = (DateTime)_pckDay.Date;
-        searchPlan(_crtDate);
+            _crtDate = _pckDay.Date.Value;
+            searchPlan(_crtDate);
         
-        _crtMealIndex = 0;
-        _txtMeal.Text = _days[_crtDay].MealList[_crtMealIndex].Name;
-        _mealImage.Source = ImageSource.FromFile(_days[_crtDay].MealList[_crtMealIndex].MealImage);
-            
-        _txtReciepe.Text = _days[_crtDay].MealList[_crtMealIndex].Recipe;
-        _lstIngredients.ItemsSource = _days[_crtDay].MealList[_crtMealIndex].Ingredients;
+            _crtMealIndex = 0;
+            _txtMeal.Text = _days[_crtDay].MealList[_crtMealIndex].Name;
+            _mealImage.Source = ImageSource.FromFile(_days[_crtDay].MealList[_crtMealIndex].MealImage);
+            _txtReciepe.Text = _days[_crtDay].MealList[_crtMealIndex].Recipe;
+            _lstIngredients.ItemsSource = _days[_crtDay].MealList[_crtMealIndex].Ingredients;
         
-        if (_days[_crtDay].WorkoutList.Count > 0)
-            _lstWorkOut.Text = _days[_crtDay].WorkoutList[0].ToString();
-        
-        else
-            _lstWorkOut.Text = "No workout planned for this day.";
-        
+            if (_days[_crtDay].WorkoutList.Count > 0)
+            {
+                _lstWorkOut.Text = _days[_crtDay].WorkoutList[0].ToString();
+                _workOutImage.Source = ImageSource.FromFile(_days[_crtDay].WorkoutList[0].Image);
+            }
+            else
+            {
+                _lstWorkOut.Text = "No workout planned for this day.";
+                _workOutImage.Source = null;
+            }
         }
         catch(Exception ex)
         {
-            await DisplayAlertAsync("Smart Calories", $"Please select a date with a plan", "ok");
+            await DisplayAlert("Smart Calories", "Please select a date with a plan", "OK");
         }
-       
     }
 
     private void searchPlan(DateTime date)
@@ -147,6 +149,10 @@ public partial class DayPage : ContentPage
             }
     
             _crtMealIndex = 0;
+            _workOutImage.Source = ImageSource.FromFile(_days[_crtDay].WorkoutList[0].Image);
+            _mealImage.Source = ImageSource.FromFile(_days[_crtDay].MealList[_crtMealIndex].MealImage);
+
+
             _txtMeal.Text = _days[_crtDay].MealList[_crtMealIndex].Name;
             _txtReciepe.Text = _days[_crtDay].MealList[_crtMealIndex].Recipe;
             _lstIngredients.ItemsSource = _days[_crtDay].MealList[_crtMealIndex].Ingredients;
