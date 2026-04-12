@@ -31,7 +31,7 @@ public partial class UserPage : ContentPage
             }
             if(string.IsNullOrEmpty(_txtAge.Text)   || _pkrActivity.SelectedIndex == -1 || _pkrDays.SelectedIndex == -1)
             {
-                await DisplayAlertAsync("Missing Info", "Please pick an option from all dropdowns.", "OK");
+                await DisplayAlert("Missing Info", "Please pick an option from all dropdowns.", "OK");
                 return;
             }
             _sharedUser.Age = int.Parse(_txtAge.Text);
@@ -65,28 +65,28 @@ public partial class UserPage : ContentPage
                 throw new ExtremeWeightLossException("Extreme Weight Loss goals. Choose goals carefully");
             }
             string data = $"{_sharedUser.Name} needs to eat around '{(int)_sharedUser.Calories}' calories daily for '{_sharedUser.Days / 7}' weeks to achieve desireable weight of '{_sharedUser.TrgtWeight}' Kg\n Are you ready to begin your journey ?";
-            await DisplayAlertAsync("Target", data, "OK");
+            await DisplayAlert("Target", data, "OK");
             await Shell.Current.GoToAsync("//Planner");
         }
         catch (ExtremeWeightLossException err)
         {
-            await DisplayAlertAsync("User", $"Error: {err.Message}", "OK");
+            await DisplayAlert("User", $"Error: {err.Message}", "OK");
         }
         catch (FormatException err)
         {
-            await DisplayAlertAsync("User", $"Error: {err.Message}", "OK");
+            await DisplayAlert("User", $"Error: {err.Message}", "OK");
         }
         catch (ArgumentException err)
         {
-            await DisplayAlertAsync("User", $"Error: {err.Message}", "OK");
+            await DisplayAlert("User", $"Error: {err.Message}", "OK");
         }
         catch (NullReferenceException err)
         {
-            await DisplayAlertAsync("User", $"Error: {err.Message}", "OK");
+            await DisplayAlert("User", $"Error: {err.Message}", "OK");
         }
         catch (Exception err)
         {
-            await DisplayAlertAsync("User",$"Error: {err.Message}" , "OK");
+            await DisplayAlert("User",$"Error: {err.Message}" , "OK");
         }
 
     }
