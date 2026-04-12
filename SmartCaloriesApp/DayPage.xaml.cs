@@ -29,7 +29,7 @@ public partial class DayPage : ContentPage
     #endregion 
 
     /// <summary>
-    ///  OnNextReciepe and OnPrevReciepe allos the user to navigate between the diferent meals on the selected day
+    ///  OnNextReciepe and OnPrevReciepe allows the user to navigate between the diferent meals on the selected day
     /// </summary>
     ///
     ///
@@ -47,9 +47,8 @@ public partial class DayPage : ContentPage
         {
             if (_crtMealIndex <= 3)
             {
-                _txtMeal.Text = _days[_crtDay].MealList[_crtMealIndex].Name;
-
                 _crtMealIndex += 1;
+                _txtMeal.Text = _days[_crtDay].MealList[_crtMealIndex].Name;
                 _mealImage.Source = ImageSource.FromFile(_days[_crtDay].MealList[_crtMealIndex].MealImage);
                 _txtReciepe.Text = _days[_crtDay].MealList[_crtMealIndex].Recipe;
                 _lstIngredients.ItemsSource = _days[_crtDay].MealList[_crtMealIndex].Ingredients;
@@ -70,12 +69,11 @@ public partial class DayPage : ContentPage
     {
         try
         {
-            if (_crtMealIndex > 0)
+            if (_crtMealIndex >= 0)
             {
                 _crtMealIndex -= 1;
                 _txtReciepe.Text = _days[_crtDay].MealList[_crtMealIndex].Recipe;
                 _mealImage.Source = ImageSource.FromFile(_days[_crtDay].MealList[_crtMealIndex].MealImage);
-                
                 _lstIngredients.ItemsSource = _days[_crtDay].MealList[_crtMealIndex].Ingredients;
                 _txtMeal.Text= _days[_crtDay].MealList[_crtMealIndex].Name;
                 _btnNext.IsEnabled = true;
