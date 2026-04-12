@@ -40,6 +40,10 @@ namespace SmartCaloriesLibrary
         {
             get { return _calories; }
         }
+        public override string ToString()
+        {
+            return _name;
+        }
         #endregion
 
         
