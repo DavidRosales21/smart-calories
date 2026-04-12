@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SmartCaloriesApp.WelcomePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="{StaticResource PageBackground}">
+
+    <ScrollView>
+        <Grid Padding="32,24,32,40">
+
+            <Frame
+                Padding="32"
+                BackgroundColor="{StaticResource CardBackground}"
+                BorderColor="{StaticResource BorderColor}"
+                CornerRadius="24"
+                HasShadow="False"
+                HorizontalOptions="Fill"
+                MaximumWidthRequest="1100"
+                VerticalOptions="Center">
+
+                <VerticalStackLayout Spacing="24">
+
+                    <!-- Header -->
+                    <VerticalStackLayout Spacing="6">
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="30"
+                            Text="Welcome to SmartCalories"
+                            TextColor="{StaticResource TextPrimary}" />
+
+                        <Label
+                            FontSize="14"
+                            Text="A simple and smart way to plan meals, track calories, and stay organized every day."
+                            TextColor="{StaticResource TextSecondary}" />
+                    </VerticalStackLayout>
+
+                    <!-- Logo -->
+                    <Frame
+                        Padding="10"
+                        BackgroundColor="{StaticResource PageBackground}"
+                        BorderColor="{StaticResource BorderColor}"
+                        CornerRadius="20"
+                        HasShadow="False">
+
+                        <Image
+                            Source="smartcalories_logo.png"
+                            HeightRequest="600"
+                            HorizontalOptions="Center"
+                            Aspect="AspectFit" />
+                    </Frame>
+
+                    <!-- Main description -->
+                    <Frame
+                        Padding="20"
+                        BackgroundColor="{StaticResource PageBackground}"
+                        BorderColor="{StaticResource BorderColor}"
+                        CornerRadius="18"
+                        HasShadow="False">
+
+                        <VerticalStackLayout Spacing="12">
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="40"
+                                Text="What SmartCalories helps you do"
+                                HorizontalOptions="Center"
+                                TextColor="{StaticResource TextPrimary}" />
+
+                            <Label
+                                FontSize="20"
+                                LineBreakMode="WordWrap"
+                                Text="SmartCalories helps users build a personalized calorie plan based on their own information, daily activity, and fitness goals. The app makes it easier to organize meals, monitor calorie intake, review daily nutrition, and stay more consistent with healthy routines."
+                                TextColor="{StaticResource TextPrimary}" />
+
+                            <Label
+                                FontSize="15"
+                                LineBreakMode="WordWrap"
+                                Text="It also supports day-by-day planning by showing meal details, ingredients, workout suggestions, and a shopping list generated from selected dates. This gives users one organized place to plan, review, and manage their nutrition journey."
+                                TextColor="{StaticResource TextPrimary}" />
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <!-- Feature cards -->
+                    <Grid ColumnDefinitions="*,*,*" ColumnSpacing="16">
+
+                        <Frame
+                            Grid.Column="0"
+                            Padding="16"
+                            BackgroundColor="{StaticResource PageBackground}"
+                            BorderColor="{StaticResource BorderColor}"
+                            CornerRadius="18"
+                            HasShadow="False">
+                            <VerticalStackLayout Spacing="8">
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    Text="Track"
+                                    TextColor="{StaticResource TextPrimary}" />
+                                <Label
+                                    FontSize="14"
+                                    Text="View your calorie goal and nutritional values clearly."
+                                    TextColor="{StaticResource TextSecondary}" />
+                            </VerticalStackLayout>
+                        </Frame>
+
+                        <Frame
+                            Grid.Column="1"
+                            Padding="16"
+                            BackgroundColor="{StaticResource PageBackground}"
+                            BorderColor="{StaticResource BorderColor}"
+                            CornerRadius="18"
+                            HasShadow="False">
+                            <VerticalStackLayout Spacing="8">
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    Text="Plan"
+                                    TextColor="{StaticResource TextPrimary}" />
+                                <Label
+                                    FontSize="14"
+                                    Text="Choose meals, workouts, and organize your daily schedule."
+                                    TextColor="{StaticResource TextSecondary}" />
+                            </VerticalStackLayout>
+                        </Frame>
+
+                        <Frame
+                            Grid.Column="2"
+                            Padding="16"
+                            BackgroundColor="{StaticResource PageBackground}"
+                            BorderColor="{StaticResource BorderColor}"
+                            CornerRadius="18"
+                            HasShadow="False">
+                            <VerticalStackLayout Spacing="8">
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    Text="Prepare"
+                                    TextColor="{StaticResource TextPrimary}" />
+                                <Label
+                                    FontSize="14"
+                                    Text="Generate a shopping list from your planned meals."
+                                    TextColor="{StaticResource TextSecondary}" />
+                            </VerticalStackLayout>
+                        </Frame>
+                    </Grid>
+
+                    <!-- Start button -->
+                    <Button
+                        x:Name="_btnStart"
+                        BackgroundColor="{StaticResource BtnPrimary}"
+                        Clicked="OnStartClicked"
+                        CornerRadius="16"
+                        FontAttributes="Bold"
+                        FontSize="18"
+                        HeightRequest="56"
+                        Text="Get Started"
+                        TextColor="{StaticResource TextPrimary}" />
+
+                </VerticalStackLayout>
+            </Frame>
+        </Grid>
+    </ScrollView>
+</ContentPage>
