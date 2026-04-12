@@ -317,7 +317,7 @@
       "mealType": "Snack",
       "calories": 220,
       "recipe": "1. Spread mashed avocado on rice cakes. 2. Top with cherry tomatoes and a sprinkle of salt and pepper.",
-      "mealImage": "images/rice_cakes.jpg",
+      "mealImage": "images/rice_cake.jpg",
       "ingredients": [
         { "name": "Rice Cakes", "calories": 70, "quantity": "2 pieces", "image": "images/rice_cakes.jpg" },
         { "name": "Avocado", "calories": 120, "quantity": "0.5 medium", "image": "images/avocado.jpg" },
