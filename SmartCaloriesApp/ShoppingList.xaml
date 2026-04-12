@@ -37,7 +37,7 @@
                     <!--  DATE RANGE SECTION  -->
                     <Grid
                         Grid.Row="1"
-                        ColumnDefinitions="*,*"
+                        ColumnDefinitions="*,*,*"
                         ColumnSpacing="16">
 
                         <!--  START DATE  -->
@@ -58,15 +58,20 @@
                                 <DatePicker
                                     x:Name="_pckStartDate"
                                     BackgroundColor="{StaticResource CardBackground}"
-                                    DateSelected="OnDateChanged"
                                     HorizontalOptions="Fill"
                                     TextColor="{StaticResource TextPrimary}" />
                             </VerticalStackLayout>
                         </Frame>
+                        <!--  SEARCH BUTTON  -->
+                        <Button x:Name="_btnSearch"
+                                Grid.Column="1"
+                                Clicked="OnSearch"
+                                Text="Search"/>
+
 
                         <!--  END DATE  -->
                         <Frame
-                            Grid.Column="1"
+                            Grid.Column="2"
                             Padding="18"
                             BackgroundColor="{StaticResource PageBackground}"
                             BorderColor="{StaticResource BorderColor}"

@@ -8,7 +8,7 @@ public partial class ShoppingList : ContentPage
     #region fields
     private Planner _planner;
     private List<Day> _days;
-    private ObservableCollection<Ingredient> _shoppingList;
+    private ObservableCollection<String> _shoppingList;
     #endregion
     #region constructor
     public ShoppingList(Planner planner)
@@ -16,7 +16,7 @@ public partial class ShoppingList : ContentPage
 		InitializeComponent();
         _planner = planner;
 		_days = _planner.Days;
-        _shoppingList = new ObservableCollection<Ingredient>();
+        _shoppingList = new ObservableCollection<String>();
         _lstShoppingList.ItemsSource = _shoppingList;
 
     }
@@ -40,14 +40,14 @@ public partial class ShoppingList : ContentPage
                     {
                         foreach(Ingredient ingredient in meal.Ingredients)
                         {
-                            Boolean isInList = _shoppingList.Contains(ingredient);
+                            Boolean isInList = _shoppingList.Contains(ingredient.Name);
                             if (isInList)
                             {
                                 continue;
                             }
                             else
                             {
-                                _shoppingList.Add(ingredient);
+                                _shoppingList.Add(ingredient.Name);
                             }
                         }
                     }
@@ -56,9 +56,10 @@ public partial class ShoppingList : ContentPage
         }
     }
 
-    private void OnDateChanged (object sender, DateChangedEventArgs e)
+    private void OnSearch(object sender, EventArgs e)
     {
         updateList((DateTime)_pckStartDate.Date,(DateTime)_pckEndDate.Date);
     }
     #endregion
+
 }
