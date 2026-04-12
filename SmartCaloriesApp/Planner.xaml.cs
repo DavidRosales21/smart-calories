@@ -147,7 +147,10 @@ public partial class Planner : ContentPage
 		_workoutPicker.IsVisible = false;
 		_workoutLabel.IsVisible = false;
 
-	}
+		_navigationBtn.IsVisible = true;
+
+
+    }
 
 	private void _radioYes_CheckedChanged(object? sender, CheckedChangedEventArgs e)
 	{

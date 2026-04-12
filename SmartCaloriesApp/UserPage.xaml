@@ -19,7 +19,7 @@
                     <RoundRectangle CornerRadius="24" />
                 </Border.StrokeShape>
 
-                <Grid ColumnDefinitions="230,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+                <Grid ColumnDefinitions="230,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
 
                     <!--  Header  -->
                     <VerticalStackLayout
