@@ -1,35 +1,71 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SmartCaloriesApp.ShoppingList"
-        BackgroundColor="{StaticResource PageBackground}">
-    
-    <Border Margin="20"
-        Padding="35, 40"
-        Stroke="#4A4A6A" 
-        StrokeThickness="1"
-        BackgroundColor="{StaticResource CardBackground}">
-        <Grid RowDefinitions="Auto, Auto ,*" ColumnDefinitions="*,*"
-          Margin="20">
-            <Border HorizontalOptions="Center" Background="{StaticResource HeaderBackground}" Stroke="#8FABe4" Grid.Row="0" Grid.ColumnSpan="2" Padding="10">
-            <Label Text="Shopping List" TextColor="#EFECE3" FontSize="26"/>
-        </Border>
-        <HorizontalStackLayout Margin="20"  Grid.Row="1" Grid.Column="0" HorizontalOptions="Center">
-            <Label Text="Start Date:" Padding="20"  VerticalOptions="Center"/>
-                <DatePicker x:Name="_pckStartDate" TextColor="Black" Background="White" DateSelected="OnDateChanged"/>
-        </HorizontalStackLayout>
-        <HorizontalStackLayout Margin="20"  Grid.Row="1" Grid.Column="1" HorizontalOptions="Center">
-            <Label Text="End Date:" Padding="20"  VerticalOptions="Center"/>
-                <DatePicker x:Name="_pckEndDate" TextColor="Black" Background="White"/>
-        </HorizontalStackLayout>
-        <Border 
-             Grid.Row="2"
-            Grid.ColumnSpan="2"
-             Margin="20"
-             StrokeThickness="2"
-             Stroke="#8FABD4">
+<ContentPage
+    x:Class="SmartCaloriesApp.ShoppingList"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="{StaticResource PageBackground}">
 
-                <CollectionView x:Name="_lstShoppingList"/>
+    <Border
+        Margin="20"
+        Padding="35,40"
+        BackgroundColor="{StaticResource CardBackground}"
+        Stroke="#4A4A6A"
+        StrokeThickness="1">
+        
+        <Grid
+            Margin="20"
+            ColumnDefinitions="*,*"
+            RowDefinitions="Auto, Auto ,*">
+            <Border
+                Grid.Row="0"
+                Grid.ColumnSpan="2"
+                Padding="10"
+                Background="{StaticResource HeaderBackground}"
+                HorizontalOptions="Center"
+                Stroke="#8FABe4">
+                <Label
+                    FontSize="26"
+                    Text="Shopping List"
+                    TextColor="#EFECE3" />
+            </Border>
+            <HorizontalStackLayout
+                Grid.Row="1"
+                Grid.Column="0"
+                Margin="20"
+                HorizontalOptions="Center">
+                <Label
+                    Padding="20"
+                    Text="Start Date:"
+                    VerticalOptions="Center" />
+                <DatePicker
+                    x:Name="_pckStartDate"
+                    Background="White"
+                    DateSelected="OnDateChanged"
+                    TextColor="Black" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="20"
+                HorizontalOptions="Center">
+                <Label
+                    Padding="20"
+                    Text="End Date:"
+                    VerticalOptions="Center" />
+                <DatePicker
+                    x:Name="_pckEndDate"
+                    Background="White"
+                    TextColor="Black" />
+            </HorizontalStackLayout>
+
+            <Border
+                Grid.Row="2"
+                Grid.ColumnSpan="2"
+                Margin="20"
+                Stroke="#8FABD4"
+                StrokeThickness="2">
+
+                <CollectionView x:Name="_lstShoppingList" />
             </Border>
         </Grid>
     </Border>

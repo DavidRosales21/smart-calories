@@ -1,92 +1,183 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SmartCaloriesApp.DayPage"
-             BackgroundColor="{StaticResource PageBackground}">
+<ContentPage
+    x:Class="SmartCaloriesApp.DayPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="{StaticResource PageBackground}">
 
-    
-    <Border Margin="20"
-        Padding="35, 40"
-        Stroke="#4A4A6A" 
-        StrokeThickness="1"
-        BackgroundColor="{StaticResource CardBackground}">
-        <Grid RowDefinitions="auto,auto,*,auto,*,auto,*">
-            <DatePicker x:Name="_pckDay" 
-                HorizontalOptions="Center"
-                Grid.Row="0"
-                Margin="20"
-                BackgroundColor="#EFECE3"
-                TextColor="Black"
-                DateSelected="OnDateSelected" >
-            </DatePicker>
-            <Border Grid.Row="1"
-                HorizontalOptions="Center" 
-                Background="{StaticResource HeaderBackground}" 
-                Stroke="#8FABe4">
-                <HorizontalStackLayout>
-                    <Button x:Name="_btnPrev"
-                            Text="&lt;" 
-                            BackgroundColor="Red" 
-                            TextColor="#EFECE3" 
-                            FontSize="23"
-                            Clicked="OnPrevReciepe"
-                            Margin="5"/>
+    <ScrollView>
+        <Grid Padding="32,24,32,40">
 
-                    <Label x:Name="_txtMeal"
-                       Text="Reciepe" 
-                       Padding="10"
-                       TextColor="#EFECE3" 
-                       FontSize="26" VerticalTextAlignment="Center"/>
+            <Frame
+                Padding="32"
+                BackgroundColor="{StaticResource CardBackground}"
+                BorderColor="{StaticResource BorderColor}"
+                CornerRadius="24"
+                HasShadow="False"
+                HorizontalOptions="Fill"
+                MaximumWidthRequest="1100">
 
-                    <Button Text=">"
-                        x:Name="_btnNext"
-                        BackgroundColor="Red"
-                        TextColor="#EFECE3" 
-                        FontSize="26"
-                        Clicked="OnNextReciepe"
-                            Margin="5"/>
-                </HorizontalStackLayout>
+                <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" RowSpacing="20">
 
-            </Border>
-            <Border Grid.Row="2"
-                Margin="20"
-                StrokeThickness="2"
-                Stroke="#8FABD4">
-                <Label x:Name="_txtReciepe"/>
-            </Border>
-            <Border Grid.Row="3"
-                HorizontalOptions="Center" 
-                Background="{StaticResource HeaderBackground}"  
-                Stroke="#8FABe4">
-                <Label Text="Ingredients" 
-                   Padding="10"
-                   TextColor="#EFECE3" 
-                   FontSize="23"/>
-            </Border>
+                    <!--  PAGE HEADER  -->
+                    <VerticalStackLayout Grid.Row="0" Spacing="6">
 
-            <Border
-                Grid.Row="4"
-                Margin="20"
-                StrokeThickness="2"
-                Stroke="#8FABD4">
-                <CollectionView x:Name="_lstIngredients"/>
-            </Border>
-            <Border Grid.Row="5"
-                HorizontalOptions="Center" 
-                Background="{StaticResource HeaderBackground}"  
-                Stroke="#8FABe4">
-                <Label Text="Workout" 
-                   Padding="10"
-                   TextColor="#EFECE3" 
-                   FontSize="23"/>
-            </Border>
-            <Border
-                Grid.Row="6"
-                Margin="20"
-                StrokeThickness="2"
-                Stroke="#8FABD4">
-                <Label x:Name="_lstWorkOut"/>
-            </Border>
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="30"
+                            Text="Day Overview"
+                            TextColor="{StaticResource TextPrimary}" />
+
+                        <Label
+                            FontSize="14"
+                            Text="View your selected recipe, ingredients, and workout for the day."
+                            TextColor="{StaticResource TextSecondary}" />
+                    </VerticalStackLayout>
+
+                    <!--  DATE SECTION  -->
+                    <Frame
+                        Grid.Row="1"
+                        Padding="18"
+                        BackgroundColor="{StaticResource PageBackground}"
+                        BorderColor="{StaticResource BorderColor}"
+                        CornerRadius="18"
+                        HasShadow="False">
+
+                        <VerticalStackLayout Spacing="8">
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                Text="Choose Date"
+                                TextColor="{StaticResource TextPrimary}" />
+
+                            <DatePicker
+                                x:Name="_pckDay"
+                                BackgroundColor="{StaticResource CardBackground}"
+                                DateSelected="OnDateSelected"
+                                HorizontalOptions="Fill"
+                                TextColor="{StaticResource TextPrimary}" />
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <!--  RECIPE NAVIGATION  -->
+                    <Frame
+                        Grid.Row="2"
+                        Padding="18"
+                        BackgroundColor="{StaticResource HeaderBackground}"
+                        BorderColor="{StaticResource BorderColor}"
+                        CornerRadius="18"
+                        HasShadow="False">
+
+                        <Grid ColumnDefinitions="70,*,70" ColumnSpacing="12">
+
+                            <Button
+                                x:Name="_btnPrev"
+                                Grid.Column="0"
+                                Margin="0"
+                                BackgroundColor="{StaticResource BtnPrimary}"
+                                Clicked="OnPrevReciepe"
+                                CornerRadius="14"
+                                FontAttributes="Bold"
+                                FontSize="22"
+                                HeightRequest="48"
+                                Text="&lt;"
+                                TextColor="{StaticResource TextPrimary}" />
+
+                            <Label
+                                x:Name="_txtMeal"
+                                Grid.Column="1"
+                                FontAttributes="Bold"
+                                FontSize="24"
+                                HorizontalTextAlignment="Center"
+                                Text="Recipe"
+                                TextColor="{StaticResource TextPrimary}"
+                                VerticalTextAlignment="Center" />
+
+                            <Button
+                                x:Name="_btnNext"
+                                Grid.Column="2"
+                                Margin="0"
+                                BackgroundColor="{StaticResource BtnPrimary}"
+                                Clicked="OnNextReciepe"
+                                CornerRadius="14"
+                                FontAttributes="Bold"
+                                FontSize="22"
+                                HeightRequest="48"
+                                Text="&gt;"
+                                TextColor="{StaticResource TextPrimary}" />
+                        </Grid>
+                    </Frame>
+
+                    <!--  RECIPE DETAILS  -->
+                    <VerticalStackLayout Grid.Row="3" Spacing="8">
+
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            Text="Recipe Details"
+                            TextColor="{StaticResource TextPrimary}" />
+
+                        <Frame
+                            Padding="18"
+                            BackgroundColor="{StaticResource PageBackground}"
+                            BorderColor="{StaticResource BorderColor}"
+                            CornerRadius="18"
+                            HasShadow="False">
+
+                            <Label
+                                x:Name="_txtReciepe"
+                                FontSize="15"
+                                LineBreakMode="WordWrap"
+                                TextColor="{StaticResource TextPrimary}" />
+                        </Frame>
+                    </VerticalStackLayout>
+
+                    <!--  INGREDIENTS TITLE  -->
+                    <Label
+                        Grid.Row="4"
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        Text="Ingredients"
+                        TextColor="{StaticResource TextPrimary}" />
+
+                    <!--  INGREDIENTS LIST  -->
+                    <Frame
+                        Grid.Row="5"
+                        Padding="12"
+                        BackgroundColor="{StaticResource PageBackground}"
+                        BorderColor="{StaticResource BorderColor}"
+                        CornerRadius="18"
+                        HasShadow="False">
+
+                        <CollectionView x:Name="_lstIngredients" HeightRequest="220" />
+                    </Frame>
+
+                    <!--  WORKOUT TITLE  -->
+                    <Label
+                        Grid.Row="6"
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        Text="Workout"
+                        TextColor="{StaticResource TextPrimary}" />
+
+                    <!--  WORKOUT DETAILS  -->
+                    <Frame
+                        Grid.Row="7"
+                        Padding="18"
+                        BackgroundColor="{StaticResource PageBackground}"
+                        BorderColor="{StaticResource BorderColor}"
+                        CornerRadius="18"
+                        HasShadow="False">
+
+                        <Label
+                            x:Name="_lstWorkOut"
+                            FontSize="15"
+                            LineBreakMode="WordWrap"
+                            TextColor="{StaticResource TextPrimary}" />
+                    </Frame>
+
+                </Grid>
+            </Frame>
         </Grid>
-    </Border>
+    </ScrollView>
 </ContentPage>
