@@ -5,7 +5,7 @@
       "mealType": "Breakfast",
       "calories": 350,
       "recipe": "1. Bring water to a boil. 2. Add oats and reduce heat. 3. Cook for 5 minutes, stirring occasionally. 4. Top with banana slices, honey, and a sprinkle of cinnamon.",
-      "mealImage": "images/oatmeal.jpg",
+      "mealImage": "oatmeal.jpg",
       "ingredients": [
           { "name": "Rolled Oats", "calories": 150, "quantity": "1 cup", "image": "images/oats.jpg" },
         { "name": "Banana", "calories": 105, "quantity": "1 medium", "image": "images/banana.jpg" },
@@ -19,7 +19,7 @@
       "mealType": "Breakfast",
       "calories": 420,
       "recipe": "1. Crack eggs into a bowl, whisk with milk. 2. Melt butter in a pan over medium heat. 3. Pour in eggs, stir gently until set. 4. Season with salt and pepper. 5. Serve with toasted whole wheat bread.",
-      "mealImage": "images/scrambled_eggs.jpg",
+      "mealImage": "scrambled_eggs.jpg",
       "ingredients": [
         { "name": "Eggs", "calories": 210, "quantity": "3 large", "image": "images/eggs.jpg" },
         { "name": "Whole Wheat Bread", "calories": 140, "quantity": "2 slices", "image": "images/bread.jpg" },
@@ -34,7 +34,7 @@
       "mealType": "Breakfast",
       "calories": 310,
       "recipe": "1. Spoon yogurt into a glass or bowl. 2. Layer with granola. 3. Add mixed berries on top. 4. Drizzle with honey.",
-      "mealImage": "images/parfait.jpg",
+      "mealImage": "parfait.jpg",
       "ingredients": [
         { "name": "Greek Yogurt", "calories": 130, "quantity": "1 cup", "image": "images/yogurt.jpg" },
         { "name": "Granola", "calories": 110, "quantity": "0.25 cup", "image": "images/granola.jpg" },
@@ -47,7 +47,7 @@
       "mealType": "Breakfast",
       "calories": 380,
       "recipe": "1. Toast the bread until golden. 2. Mash avocado with a fork and spread on toast. 3. Top with cherry tomatoes and a fried egg. 4. Season with salt, pepper, and red pepper flakes.",
-      "mealImage": "images/avocado_toast.jpg",
+      "mealImage": "avocado_toast.jpg",
       "ingredients": [
         { "name": "Whole Wheat Bread", "calories": 70, "quantity": "1 slice", "image": "images/bread.jpg" },
         { "name": "Avocado", "calories": 160, "quantity": "0.5 medium", "image": "images/avocado.jpg" },
@@ -61,7 +61,7 @@
       "mealType": "Breakfast",
       "calories": 450,
       "recipe": "1. Mash bananas in a bowl. 2. Mix in eggs and flour until smooth. 3. Heat a non-stick pan with butter. 4. Pour small circles of batter, cook 2 minutes per side. 5. Serve with maple syrup.",
-      "mealImage": "images/pancakes.jpg",
+      "mealImage": "pancakes.jpg",
       "ingredients": [
         { "name": "Banana", "calories": 105, "quantity": "1 medium", "image": "images/banana.jpg" },
         { "name": "Eggs", "calories": 140, "quantity": "2 large", "image": "images/eggs.jpg" },
@@ -75,7 +75,7 @@
       "mealType": "Breakfast",
       "calories": 340,
       "recipe": "1. Blend frozen berries, banana, and almond milk until thick. 2. Pour into a bowl. 3. Top with granola, chia seeds, and sliced strawberries.",
-      "mealImage": "images/smoothie_bowl.jpg",
+      "mealImage": "smoothie_bowl.jpg",
       "ingredients": [
         { "name": "Frozen Mixed Berries", "calories": 70, "quantity": "1 cup", "image": "images/frozen_berries.jpg" },
         { "name": "Banana", "calories": 105, "quantity": "1 medium", "image": "images/banana.jpg" },
@@ -89,7 +89,7 @@
       "mealType": "Lunch",
       "calories": 550,
       "recipe": "1. Season chicken with olive oil, garlic powder, paprika, salt, and pepper. 2. Grill on medium-high heat for 6-7 minutes per side. 3. Cook rice according to package directions. 4. Serve chicken over rice with steamed broccoli.",
-      "mealImage": "images/grilled_chicken.jpg",
+      "mealImage": "grilled_chicken.jpg",
       "ingredients": [
         { "name": "Chicken Breast", "calories": 230, "quantity": "200g", "image": "images/chicken.jpg" },
         { "name": "White Rice", "calories": 205, "quantity": "1 cup cooked", "image": "images/rice.jpg" },
@@ -104,7 +104,7 @@
       "mealType": "Lunch",
       "calories": 620,
       "recipe": "1. Marinate sliced chicken in shawarma spices, yogurt, and lemon juice for 30 minutes. 2. Cook in a hot skillet until golden. 3. Warm the tortilla. 4. Fill with chicken, lettuce, tomatoes, and garlic sauce.",
-      "mealImage": "images/shawarma.jpg",
+      "mealImage": "shawarma.jpg",
       "ingredients": [
         { "name": "Chicken Breast", "calories": 230, "quantity": "200g", "image": "images/chicken.jpg" },
         { "name": "Flour Tortilla", "calories": 150, "quantity": "1 large", "image": "images/tortilla.jpg" },
@@ -122,7 +122,7 @@
       "mealType": "Lunch",
       "calories": 390,
       "recipe": "1. Drain tuna and place in a bowl. 2. Add diced celery, red onion, and mayo. 3. Mix well. 4. Serve on a bed of mixed greens with cherry tomatoes and cucumber.",
-      "mealImage": "images/tuna_salad.jpg",
+      "mealImage": "tuna_salad.jpg",
       "ingredients": [
         { "name": "Canned Tuna", "calories": 180, "quantity": "1 can (150g)", "image": "images/tuna.jpg" },
         { "name": "Mixed Greens", "calories": 10, "quantity": "2 cups", "image": "images/greens.jpg" },
@@ -139,7 +139,7 @@
       "mealType": "Lunch",
       "calories": 480,
       "recipe": "1. Toast the bread lightly. 2. Layer turkey slices, lettuce, tomato, and cheese. 3. Add mustard or mayo. 4. Close and slice diagonally.",
-      "mealImage": "images/turkey_sandwich.jpg",
+      "mealImage": "turkey_sandwich.jpg",
       "ingredients": [
         { "name": "Whole Wheat Bread", "calories": 140, "quantity": "2 slices", "image": "images/bread.jpg" },
         { "name": "Turkey Slices", "calories": 120, "quantity": "100g", "image": "images/turkey.jpg" },
@@ -154,7 +154,7 @@
       "mealType": "Lunch",
       "calories": 510,
       "recipe": "1. Slice beef thinly. 2. Heat sesame oil in a wok over high heat. 3. Stir fry beef for 2 minutes, set aside. 4. Stir fry bell peppers, snap peas, and carrots. 5. Add beef back, pour in soy sauce, toss and serve.",
-      "mealImage": "images/beef_stirfry.jpg",
+      "mealImage": "beef_stirfry.jpg",
       "ingredients": [
         { "name": "Beef Sirloin", "calories": 250, "quantity": "200g", "image": "images/beef.jpg" },
         { "name": "Bell Pepper", "calories": 25, "quantity": "1 medium", "image": "images/bell_pepper.jpg" },
@@ -170,7 +170,7 @@
       "mealType": "Dinner",
       "calories": 580,
       "recipe": "1. Season salmon with lemon, dill, salt, and pepper. 2. Grill skin-side down for 4-5 minutes, flip and cook 3 more. 3. Bake sweet potato at 400F for 45 minutes. 4. Serve together with steamed asparagus.",
-      "mealImage": "images/salmon.jpg",
+      "mealImage": "salmon.jpg",
       "ingredients": [
         { "name": "Salmon Fillet", "calories": 280, "quantity": "200g", "image": "images/salmon_fillet.jpg" },
         { "name": "Sweet Potato", "calories": 115, "quantity": "1 medium", "image": "images/sweet_potato.jpg" },
@@ -185,7 +185,7 @@
       "mealType": "Dinner",
       "calories": 650,
       "recipe": "1. Cook spaghetti according to package. 2. Brown ground beef in a pan. 3. Add garlic, onion, and cook until soft. 4. Add crushed tomatoes, tomato paste, oregano, and basil. 5. Simmer 20 minutes. 6. Serve sauce over pasta with parmesan.",
-      "mealImage": "images/spaghetti.jpg",
+      "mealImage": "spaghetti.jpg",
       "ingredients": [
         { "name": "Spaghetti Pasta", "calories": 220, "quantity": "100g dry", "image": "images/pasta.jpg" },
         { "name": "Ground Beef", "calories": 250, "quantity": "150g", "image": "images/ground_beef.jpg" },
@@ -202,7 +202,7 @@
       "mealType": "Dinner",
       "calories": 520,
       "recipe": "1. Preheat oven to 425F. 2. Season chicken thighs with paprika, garlic powder, and olive oil. 3. Toss zucchini, bell peppers, and onion with olive oil. 4. Spread everything on a baking sheet. 5. Bake for 35 minutes until chicken is golden.",
-      "mealImage": "images/baked_chicken.jpg",
+      "mealImage": "baked_chicken.jpg",
       "ingredients": [
         { "name": "Chicken Thighs", "calories": 280, "quantity": "250g", "image": "images/chicken_thighs.jpg" },
         { "name": "Zucchini", "calories": 25, "quantity": "1 medium", "image": "images/zucchini.jpg" },
@@ -218,7 +218,7 @@
       "mealType": "Dinner",
       "calories": 490,
       "recipe": "1. Season shrimp with chili powder, cumin, and lime juice. 2. Sear in a hot pan for 2 minutes per side. 3. Warm corn tortillas. 4. Fill with shrimp, shredded cabbage, avocado, and salsa.",
-      "mealImage": "images/shrimp_tacos.jpg",
+      "mealImage": "shrimp_tacos.jpg",
       "ingredients": [
         { "name": "Shrimp", "calories": 140, "quantity": "150g", "image": "images/shrimp.jpg" },
         { "name": "Corn Tortillas", "calories": 140, "quantity": "3 small", "image": "images/corn_tortilla.jpg" },
@@ -234,7 +234,7 @@
       "mealType": "Dinner",
       "calories": 600,
       "recipe": "1. Cook rice. 2. Dice chicken and cook in a pan until browned. 3. Add teriyaki sauce and cook until glazed. 4. Steam edamame and slice cucumber. 5. Assemble bowl: rice, chicken, edamame, cucumber, sesame seeds.",
-      "mealImage": "images/teriyaki_bowl.jpg",
+      "mealImage": "teriyaki_bowl.jpg",
       "ingredients": [
         { "name": "Chicken Breast", "calories": 230, "quantity": "200g", "image": "images/chicken.jpg" },
         { "name": "White Rice", "calories": 205, "quantity": "1 cup cooked", "image": "images/rice.jpg" },
@@ -249,7 +249,7 @@
       "mealType": "Dinner",
       "calories": 480,
       "recipe": "1. Saute onion and garlic in oil. 2. Add curry powder and cook 1 minute. 3. Add chickpeas, diced potatoes, and coconut milk. 4. Simmer 25 minutes until potatoes are tender. 5. Add spinach and cook 2 more minutes. 6. Serve over rice.",
-      "mealImage": "images/veg_curry.jpg",
+      "mealImage": "veg_curry.jpg",
       "ingredients": [
         { "name": "Chickpeas", "calories": 120, "quantity": "0.5 cup canned", "image": "images/chickpeas.jpg" },
         { "name": "Potato", "calories": 80, "quantity": "1 small", "image": "images/potato.jpg" },
@@ -267,7 +267,7 @@
       "mealType": "Snack",
       "calories": 280,
       "recipe": "1. Add all ingredients to a blender. 2. Blend on high for 30 seconds until smooth. 3. Pour into a glass and enjoy.",
-      "mealImage": "images/protein_shake.jpg",
+      "mealImage": "protein_shake.jpg",
       "ingredients": [
         { "name": "Whey Protein Powder", "calories": 120, "quantity": "1 scoop", "image": "images/protein_powder.jpg" },
         { "name": "Banana", "calories": 105, "quantity": "1 medium", "image": "images/banana.jpg" },
@@ -280,7 +280,7 @@
       "mealType": "Snack",
       "calories": 210,
       "recipe": "1. Combine all ingredients in a small bowl or bag. 2. Mix well. 3. Portion into a small container for on-the-go snacking.",
-      "mealImage": "images/trail_mix.jpg",
+      "mealImage": "trail_mix.jpg",
       "ingredients": [
         { "name": "Almonds", "calories": 80, "quantity": "10 pieces", "image": "images/almonds.jpg" },
         { "name": "Walnuts", "calories": 50, "quantity": "5 halves", "image": "images/walnuts.jpg" },
@@ -293,7 +293,7 @@
       "mealType": "Snack",
       "calories": 260,
       "recipe": "1. Wash and slice the apple. 2. Spread peanut butter on each slice or use as a dip.",
-      "mealImage": "images/apple_pb.jpg",
+      "mealImage": "apple_pb.jpg",
       "ingredients": [
         { "name": "Apple", "calories": 95, "quantity": "1 medium", "image": "images/apple.jpg" },
         { "name": "Peanut Butter", "calories": 190, "quantity": "2 tbsp", "image": "images/peanut_butter.jpg" }
@@ -304,7 +304,7 @@
       "mealType": "Snack",
       "calories": 180,
       "recipe": "1. Scoop hummus into a small bowl. 2. Wash and slice carrots, celery, and cucumber into sticks. 3. Dip and enjoy.",
-      "mealImage": "images/hummus_veggies.jpg",
+      "mealImage": "hummus_veggies.jpg",
       "ingredients": [
         { "name": "Hummus", "calories": 100, "quantity": "3 tbsp", "image": "images/hummus.jpg" },
         { "name": "Carrots", "calories": 25, "quantity": "1 medium", "image": "images/carrots.jpg" },
@@ -317,7 +317,7 @@
       "mealType": "Snack",
       "calories": 220,
       "recipe": "1. Spread mashed avocado on rice cakes. 2. Top with cherry tomatoes and a sprinkle of salt and pepper.",
-      "mealImage": "images/rice_cake.jpg",
+      "mealImage": "rice_cake.jpg",
       "ingredients": [
         { "name": "Rice Cakes", "calories": 70, "quantity": "2 pieces", "image": "images/rice_cakes.jpg" },
         { "name": "Avocado", "calories": 120, "quantity": "0.5 medium", "image": "images/avocado.jpg" },
@@ -329,7 +329,7 @@
       "mealType": "Snack",
       "calories": 170,
       "recipe": "1. Scoop cottage cheese into a bowl. 2. Top with fresh blueberries. 3. Drizzle with honey if desired.",
-      "mealImage": "images/cottage_cheese.jpg",
+      "mealImage": "cottage_cheese.jpg",
       "ingredients": [
         { "name": "Cottage Cheese", "calories": 110, "quantity": "0.5 cup", "image": "images/cottage_cheese.jpg" },
         { "name": "Blueberries", "calories": 40, "quantity": "0.25 cup", "image": "images/blueberries.jpg" },
@@ -341,7 +341,7 @@
       "mealType": "Snack",
       "calories": 155,
       "recipe": "1. Place eggs in a pot, cover with water. 2. Bring to a boil. 3. Remove from heat, cover, and let sit 10 minutes. 4. Transfer to ice water. 5. Peel and season with salt and pepper.",
-      "mealImage": "images/boiled_eggs.jpg",
+      "mealImage": "boiled_eggs.jpg",
       "ingredients": [
         { "name": "Eggs", "calories": 140, "quantity": "2 large", "image": "images/eggs.jpg" },
         { "name": "Salt", "calories": 0, "quantity": "pinch", "image": "images/salt.jpg" },
@@ -353,7 +353,7 @@
       "mealType": "Lunch",
       "calories": 440,
       "recipe": "1. Grill chicken breast and slice. 2. Toss romaine lettuce with Caesar dressing. 3. Add croutons and parmesan. 4. Top with sliced chicken.",
-      "mealImage": "images/caesar_salad.jpg",
+      "mealImage": "caesar_salad.jpg",
       "ingredients": [
         { "name": "Chicken Breast", "calories": 180, "quantity": "150g", "image": "images/chicken.jpg" },
         { "name": "Romaine Lettuce", "calories": 10, "quantity": "2 cups", "image": "images/romaine.jpg" },
@@ -381,7 +381,7 @@
       "mealType": "Lunch",
       "calories": 350,
       "recipe": "1. Saute onion, carrots, and celery in olive oil. 2. Add garlic and cook 1 minute. 3. Add lentils, diced tomatoes, and vegetable broth. 4. Simmer 25 minutes until lentils are tender. 5. Season with cumin, salt, and pepper.",
-      "mealImage": "images/lentil_soup.jpg",
+      "mealImage": "lentil_soup.jpg",
       "ingredients": [
         { "name": "Red Lentils", "calories": 170, "quantity": "0.5 cup dry", "image": "images/lentils.jpg" },
         { "name": "Carrots", "calories": 25, "quantity": "1 medium", "image": "images/carrots.jpg" },

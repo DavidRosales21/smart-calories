@@ -109,6 +109,7 @@ public partial class DayPage : ContentPage
         
         if (_days[_crtDay].WorkoutList.Count > 0)
             _lstWorkOut.Text = _days[_crtDay].WorkoutList[0].ToString();
+        
         else
             _lstWorkOut.Text = "No workout planned for this day.";
         
