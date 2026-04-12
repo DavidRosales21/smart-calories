@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-/// David
 namespace SmartCaloriesLibrary
 {
     /// <summary>
-    /// the ingredient class represents all the necesary information of an ingredient to be used in a meal
+    /// Author : Antesh Kumar Sharma
+    /// represents the ingredient class that has all the necesary information of an ingredient to be used in a meal
     /// </summary>
     public class Ingredient:FoodItem
     {
