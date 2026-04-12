@@ -51,7 +51,7 @@
                             <VerticalStackLayout Spacing="8">
                                 <Label
                                     FontAttributes="Bold"
-                                    FontSize="16"
+                                    FontSize="20"
                                     Text="Start Date"
                                     HorizontalTextAlignment="Center"
                                     TextColor="{StaticResource TextPrimary}" />
@@ -72,13 +72,13 @@
                             Padding="18"
                             BackgroundColor="{StaticResource PageBackground}"
                             BorderColor="{StaticResource BorderColor}"
-                            CornerRadius="18"
+                            CornerRadius="30"
                             HasShadow="False">
 
                             <VerticalStackLayout Spacing="8">
                                 <Label
                                     FontAttributes="Bold"
-                                    FontSize="16"
+                                    FontSize="20"
                                     Text="End Date"
                                     HorizontalTextAlignment="Center"
                                     TextColor="{StaticResource TextPrimary}" />
@@ -97,6 +97,8 @@
                     <!--  SEARCH BUTTON  -->
                     <Button x:Name="_btnSearch"
                             Grid.Row="2"
+                            BackgroundColor="{StaticResource BtnPrimary}"
+
                             Clicked="OnSearch"
                             Text="Search"/>
 

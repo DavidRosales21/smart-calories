@@ -41,55 +41,43 @@ public partial class DayPage : ContentPage
         _days = App.Days;
     } 
     
+    
     private async void OnNextReciepe(object sender, EventArgs e)
     {
         try
         {
-            if (_crtMealIndex <= 3)
-            {
-                _txtMeal.Text = _days[_crtDay].MealList[_crtMealIndex].Name;
-
-                _crtMealIndex += 1;
-                _mealImage.Source = ImageSource.FromFile(_days[_crtDay].MealList[_crtMealIndex].MealImage);
-                _txtReciepe.Text = _days[_crtDay].MealList[_crtMealIndex].Recipe;
-                _lstIngredients.ItemsSource = _days[_crtDay].MealList[_crtMealIndex].Ingredients;
-                _btnPrev.IsEnabled = true;
-            }
-            else
-            {
-                _btnNext.IsEnabled = false;
-            }
+            _crtMealIndex = (_crtMealIndex + 1) % _days[_crtDay].MealList.Count;
+            _txtMeal.Text = _days[_crtDay].MealList[_crtMealIndex].Name;
+            _mealImage.Source = ImageSource.FromFile(_days[_crtDay].MealList[_crtMealIndex].MealImage);
+            _txtReciepe.Text = _days[_crtDay].MealList[_crtMealIndex].Recipe;
+            _lstIngredients.ItemsSource = _days[_crtDay].MealList[_crtMealIndex].Ingredients;
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
-            await DisplayAlertAsync("Smart Calories", $"Unexpected error in the reciepe book.", "ok");
+            await DisplayAlert("Smart Calories", "Unexpected error in the recipe book.", "OK");
         }
-          
     }
+    
+    
+    
     private async void OnPrevReciepe(object sender, EventArgs e)
     {
         try
         {
-            if (_crtMealIndex > 0)
-            {
-                _crtMealIndex -= 1;
-                _txtReciepe.Text = _days[_crtDay].MealList[_crtMealIndex].Recipe;
-                _mealImage.Source = ImageSource.FromFile(_days[_crtDay].MealList[_crtMealIndex].MealImage);
-                
-                _lstIngredients.ItemsSource = _days[_crtDay].MealList[_crtMealIndex].Ingredients;
-                _txtMeal.Text= _days[_crtDay].MealList[_crtMealIndex].Name;
-                _btnNext.IsEnabled = true;
-            }
-            else
-            {
-                _btnPrev.IsEnabled = false;
-            }
+            _crtMealIndex = (_crtMealIndex - 1 + _days[_crtDay].MealList.Count) % _days[_crtDay].MealList.Count;
+            _txtMeal.Text = _days[_crtDay].MealList[_crtMealIndex].Name;
+            _mealImage.Source = ImageSource.FromFile(_days[_crtDay].MealList[_crtMealIndex].MealImage);
+            _txtReciepe.Text = _days[_crtDay].MealList[_crtMealIndex].Recipe;
+            _lstIngredients.ItemsSource = _days[_crtDay].MealList[_crtMealIndex].Ingredients;
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
-            await DisplayAlertAsync("Smart Calories", $"Unexpected error in the reciepe book.", "ok");
+            await DisplayAlert("Smart Calories", "Unexpected error in the recipe book.", "OK");
         }
     }
+    
+    
+    
 
     private async void OnDateSelected(object sender, DateChangedEventArgs e)
     {
@@ -149,7 +137,6 @@ public partial class DayPage : ContentPage
             }
     
             _crtMealIndex = 0;
-            _workOutImage.Source = ImageSource.FromFile(_days[_crtDay].WorkoutList[0].Image);
             _mealImage.Source = ImageSource.FromFile(_days[_crtDay].MealList[_crtMealIndex].MealImage);
 
 
@@ -158,8 +145,14 @@ public partial class DayPage : ContentPage
             _lstIngredients.ItemsSource = _days[_crtDay].MealList[_crtMealIndex].Ingredients;
     
             if (_days[_crtDay].WorkoutList.Count > 0)
+            {
                 _lstWorkOut.Text = _days[_crtDay].WorkoutList[0].ToString();
+                _workOutImage.Source = ImageSource.FromFile(_days[_crtDay].WorkoutList[0].Image);
+            }
             else
+            {
                 _lstWorkOut.Text = "No workout planned.";
+                _workOutImage.Source = null;
+            }
         }    
 }
