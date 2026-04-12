@@ -13,8 +13,7 @@ public partial class UserPage : ContentPage
 	{
 		InitializeComponent();
         _sharedUser = user;
-        List<int> ageList = Enumerable.Range(1, 100).ToList();
-        _pkrAge.ItemsSource = ageList;
+        
     }
 
     private async void OnSubmit(object sender, EventArgs e)
@@ -30,12 +29,12 @@ public partial class UserPage : ContentPage
             {
                 _sharedUser.Gender = "Female";
             }
-            if(_pkrAge.SelectedIndex == -1 || _pkrActivity.SelectedIndex == -1 || _pkrDays.SelectedIndex == -1)
+            if(string.IsNullOrEmpty(_txtAge.Text)   || _pkrActivity.SelectedIndex == -1 || _pkrDays.SelectedIndex == -1)
             {
                 await DisplayAlertAsync("Missing Info", "Please pick an option from all dropdowns.", "OK");
                 return;
             }
-            _sharedUser.Age = (int)_pkrAge.SelectedItem;
+            _sharedUser.Age = int.Parse(_txtAge.Text);
             if(string.IsNullOrEmpty(_txtCrtWeight.Text) || string.IsNullOrEmpty(_txtTargetWeight.Text) || string.IsNullOrEmpty(_txtHeight.Text))
             {
                 throw new ArgumentException("All of the fields have to be filled");
