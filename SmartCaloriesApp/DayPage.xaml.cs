@@ -49,6 +49,7 @@ public partial class DayPage : ContentPage
             {
                 _crtMealIndex += 1;
                 _txtMeal.Text = _days[_crtDay].MealList[_crtMealIndex].Name;
+                _mealImage.Source = ImageSource.FromFile(_days[_crtDay].MealList[_crtMealIndex].MealImage);
                 _txtReciepe.Text = _days[_crtDay].MealList[_crtMealIndex].Recipe;
                 _lstIngredients.ItemsSource = _days[_crtDay].MealList[_crtMealIndex].Ingredients;
                 _btnPrev.IsEnabled = true;
@@ -72,6 +73,8 @@ public partial class DayPage : ContentPage
             {
                 _crtMealIndex -= 1;
                 _txtReciepe.Text = _days[_crtDay].MealList[_crtMealIndex].Recipe;
+                _mealImage.Source = ImageSource.FromFile(_days[_crtDay].MealList[_crtMealIndex].MealImage);
+                
                 _lstIngredients.ItemsSource = _days[_crtDay].MealList[_crtMealIndex].Ingredients;
                 _txtMeal.Text= _days[_crtDay].MealList[_crtMealIndex].Name;
                 _btnNext.IsEnabled = true;
@@ -99,6 +102,7 @@ public partial class DayPage : ContentPage
         
         _crtMealIndex = 0;
         _txtMeal.Text = _days[_crtDay].MealList[_crtMealIndex].Name;
+        _mealImage.Source = ImageSource.FromFile(_days[_crtDay].MealList[_crtMealIndex].MealImage);
             
         _txtReciepe.Text = _days[_crtDay].MealList[_crtMealIndex].Recipe;
         _lstIngredients.ItemsSource = _days[_crtDay].MealList[_crtMealIndex].Ingredients;
