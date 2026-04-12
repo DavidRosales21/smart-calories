@@ -5,68 +5,137 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     BackgroundColor="{StaticResource PageBackground}">
 
-    <Border
-        Margin="20"
-        Padding="35,40"
-        BackgroundColor="{StaticResource CardBackground}"
-        Stroke="#4A4A6A"
-        StrokeThickness="1">
-        
-        <Grid
-            Margin="20"
-            ColumnDefinitions="*,*"
-            RowDefinitions="Auto, Auto ,*">
-            <Border
-                Grid.Row="0"
-                Grid.ColumnSpan="2"
-                Padding="10"
-                Background="{StaticResource HeaderBackground}"
-                HorizontalOptions="Center"
-                Stroke="#8FABe4">
-                <Label
-                    FontSize="26"
-                    Text="Shopping List"
-                    TextColor="#EFECE3" />
-            </Border>
-            <HorizontalStackLayout
-                Grid.Row="1"
-                Grid.Column="0"
-                Margin="20"
-                HorizontalOptions="Center">
-                <Label
-                    Padding="20"
-                    Text="Start Date:"
-                    VerticalOptions="Center" />
-                <DatePicker
-                    x:Name="_pckStartDate"
-                    Background="White"
-                    DateSelected="OnDateChanged"
-                    TextColor="Black" />
-            </HorizontalStackLayout>
-            <HorizontalStackLayout
-                Grid.Row="1"
-                Grid.Column="1"
-                Margin="20"
-                HorizontalOptions="Center">
-                <Label
-                    Padding="20"
-                    Text="End Date:"
-                    VerticalOptions="Center" />
-                <DatePicker
-                    x:Name="_pckEndDate"
-                    Background="White"
-                    TextColor="Black" />
-            </HorizontalStackLayout>
+    <ScrollView>
+        <Grid Padding="32,24,32,40">
 
-            <Border
-                Grid.Row="2"
-                Grid.ColumnSpan="2"
-                Margin="20"
-                Stroke="#8FABD4"
-                StrokeThickness="2">
+            <Frame
+                Padding="32"
+                BackgroundColor="{StaticResource CardBackground}"
+                BorderColor="{StaticResource BorderColor}"
+                CornerRadius="24"
+                HasShadow="False"
+                HorizontalOptions="Fill"
+                MaximumWidthRequest="1100">
 
-                <CollectionView x:Name="_lstShoppingList" />
-            </Border>
+                <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="20">
+
+                    <!--  PAGE HEADER  -->
+                    <VerticalStackLayout Grid.Row="0" Spacing="6">
+
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="30"
+                            Text="Shopping List"
+                            TextColor="{StaticResource TextPrimary}" />
+
+                        <Label
+                            FontSize="14"
+                            Text="Choose a date range to generate the ingredients you need for your meal plan."
+                            TextColor="{StaticResource TextSecondary}" />
+                    </VerticalStackLayout>
+
+                    <!--  DATE RANGE SECTION  -->
+                    <Grid
+                        Grid.Row="1"
+                        ColumnDefinitions="*,*"
+                        ColumnSpacing="16">
+
+                        <!--  START DATE  -->
+                        <Frame
+                            Padding="18"
+                            BackgroundColor="{StaticResource PageBackground}"
+                            BorderColor="{StaticResource BorderColor}"
+                            CornerRadius="18"
+                            HasShadow="False">
+
+                            <VerticalStackLayout Spacing="8">
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    Text="Start Date"
+                                    TextColor="{StaticResource TextPrimary}" />
+
+                                <DatePicker
+                                    x:Name="_pckStartDate"
+                                    BackgroundColor="{StaticResource CardBackground}"
+                                    DateSelected="OnDateChanged"
+                                    HorizontalOptions="Fill"
+                                    TextColor="{StaticResource TextPrimary}" />
+                            </VerticalStackLayout>
+                        </Frame>
+
+                        <!--  END DATE  -->
+                        <Frame
+                            Grid.Column="1"
+                            Padding="18"
+                            BackgroundColor="{StaticResource PageBackground}"
+                            BorderColor="{StaticResource BorderColor}"
+                            CornerRadius="18"
+                            HasShadow="False">
+
+                            <VerticalStackLayout Spacing="8">
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    Text="End Date"
+                                    TextColor="{StaticResource TextPrimary}" />
+
+                                <DatePicker
+                                    x:Name="_pckEndDate"
+                                    BackgroundColor="{StaticResource CardBackground}"
+                                    HorizontalOptions="Fill"
+                                    TextColor="{StaticResource TextPrimary}" />
+                            </VerticalStackLayout>
+                        </Frame>
+                    </Grid>
+
+                    <!--  INFO BOX  -->
+                    <Frame
+                        Grid.Row="2"
+                        Padding="18"
+                        BackgroundColor="{StaticResource HeaderBackground}"
+                        BorderColor="{StaticResource BorderColor}"
+                        CornerRadius="18"
+                        HasShadow="False">
+
+                        <VerticalStackLayout Spacing="4">
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="17"
+                                Text="Smart Grocery Planning"
+                                TextColor="{StaticResource TextPrimary}" />
+
+                            <Label
+                                FontSize="14"
+                                LineBreakMode="WordWrap"
+                                Text="Choose your date range to automatically build a well-organized shopping list from your meal plan."
+                                TextColor="{StaticResource TextPrimary}" />
+
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <!--  SHOPPING LIST  -->
+                    <VerticalStackLayout Grid.Row="3" Spacing="10">
+
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            Text="Generated List"
+                            TextColor="{StaticResource TextPrimary}" />
+
+                        <Frame
+                            Padding="12"
+                            BackgroundColor="{StaticResource PageBackground}"
+                            BorderColor="{StaticResource BorderColor}"
+                            CornerRadius="18"
+                            HasShadow="False">
+
+                            <CollectionView x:Name="_lstShoppingList" HeightRequest="420" />
+                        </Frame>
+                    </VerticalStackLayout>
+
+                </Grid>
+            </Frame>
         </Grid>
-    </Border>
+    </ScrollView>
 </ContentPage>
