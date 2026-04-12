@@ -367,7 +367,7 @@
       "mealType": "Dinner",
       "calories": 540,
       "recipe": "1. Preheat oven to 475F. 2. Roll out pizza dough. 3. Spread marinara sauce. 4. Add fresh mozzarella slices. 5. Bake for 10-12 minutes. 6. Top with fresh basil after baking.",
-      "mealImage": "images/pizza.jpg",
+      "mealImage": "pizza.jpg",
       "ingredients": [
         { "name": "Pizza Dough", "calories": 280, "quantity": "200g", "image": "images/pizza_dough.jpg" },
         { "name": "Marinara Sauce", "calories": 35, "quantity": "3 tbsp", "image": "images/marinara.jpg" },
