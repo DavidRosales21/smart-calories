@@ -4,6 +4,10 @@ using System.Text;
 
 namespace SmartCaloriesLibrary;
 
+/// <summary>
+/// Author : Antesh Kumar Sharma
+/// Represents the user class that saves all the data from the user page, saves it and does the daily calorie intake calculation
+/// </summary>
 public class User
 {
     #region Field Variables

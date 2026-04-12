@@ -6,6 +6,10 @@ using SmartCaloriesLibrary;
 
 namespace SmartCaloriesApp;
 
+/// <summary>
+/// Author : Antesh Kumar Sharma
+/// Represents the cs file for the User page which does all the backend data processing for calculating the daily calories and saving user.
+/// </summary>
 public partial class UserPage : ContentPage
 {
     private User _sharedUser;
