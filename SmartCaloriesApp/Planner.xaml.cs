@@ -180,9 +180,9 @@ public partial class Planner : ContentPage
 		await Shell.Current.GoToAsync("//Day");
 	}
 
-	private void _btnGoToWorkOut_OnClicked(object? sender, EventArgs e)
+	private async void _btnGoToWorkOut_OnClicked(object? sender, EventArgs e)
 	{
-		throw new NotImplementedException();
+		await Shell.Current.GoToAsync("//ShoppingList");
 	}
 
 	public List<Day> Days
