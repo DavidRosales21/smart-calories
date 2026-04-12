@@ -14,6 +14,8 @@ public partial class App : Application
     
     public static DataLibrary Library { get; private set; } = new DataLibrary();
     
+    private static List<Day> _days = new List<Day>();
+
     
     protected override Window CreateWindow(IActivationState? activationState)
     {
@@ -27,6 +29,11 @@ public partial class App : Application
 
         using Stream workoutsStream = await FileSystem.OpenAppPackageFileAsync("workouts.json");
         await Library.LoadWorkouts(workoutsStream);
+    }
+    
+    public static List<Day> Days
+    {
+        get { return _days; }
     }
     
 }

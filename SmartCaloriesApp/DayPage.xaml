@@ -56,6 +56,13 @@
                                 DateSelected="OnDateSelected"
                                 HorizontalOptions="Fill"
                                 TextColor="{StaticResource TextPrimary}" />
+                                
+                            <Button Text="Load Plan"
+                                    x:Name="_btnLoadPlan"
+                                    BackgroundColor="{StaticResource BtnPrimary}"
+                                    TextColor="{StaticResource TextPrimary}"
+                                    CornerRadius="14"
+                                    Clicked="OnLoadPlan"/>
                         </VerticalStackLayout>
                     </Frame>
 
@@ -149,7 +156,32 @@
                         CornerRadius="18"
                         HasShadow="False">
 
-                        <CollectionView x:Name="_lstIngredients" HeightRequest="220" />
+                        <CollectionView x:Name="_lstIngredients" HeightRequest="220">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Frame Padding="10,8" Margin="0,4" 
+                                           BackgroundColor="{StaticResource CardBackground}"
+                                           BorderColor="{StaticResource BorderColor}"
+                                           CornerRadius="10"
+                                           HasShadow="False">
+                                        <Grid ColumnDefinitions="*, Auto">
+                                            <Label Grid.Column="0"
+                                                   Text="{Binding Name}"
+                                                   TextColor="{StaticResource TextPrimary}"
+                                                   FontSize="15"
+                                                   VerticalOptions="Center"/>
+                                            <Label Grid.Column="1"
+                                                   Text="{Binding Quantity}"
+                                                   TextColor="{StaticResource TextSecondary}"
+                                                   FontSize="14"
+                                                   VerticalOptions="Center"/>
+                                        </Grid>
+                                    </Frame>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                        
+                        
                     </Frame>
 
                     <!--  WORKOUT TITLE  -->

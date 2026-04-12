@@ -10,7 +10,6 @@ using System.Linq.Expressions;
 public partial class DayPage : ContentPage
 {
     #region fields
-    private Planner _planner;
     private List<Day> _days;
     private int _crtMealIndex;
     private DateTime _crtDate;
@@ -18,21 +17,30 @@ public partial class DayPage : ContentPage
     #endregion
 
     #region constructor
-
-    public DayPage(Planner planner)
-	{
-        _planner = planner;
-		InitializeComponent();
-        _days = _planner.Days;
+    
+    public DayPage()
+    {
+        InitializeComponent();
+        _days = App.Days;
         _crtMealIndex = 0;
         _crtDate = DateTime.Today;
         _crtDay = 0;
-	}
+    }
     #endregion 
 
     /// <summary>
     ///  OnNextReciepe and OnPrevReciepe allos the user to navigate between the diferent meals on the selected day
     /// </summary>
+    ///
+    ///
+    
+    
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        _days = App.Days;
+    } 
+    
     private async void OnNextReciepe(object sender, EventArgs e)
     {
         try
@@ -60,7 +68,7 @@ public partial class DayPage : ContentPage
     {
         try
         {
-            if (_crtMealIndex >= 0)
+            if (_crtMealIndex > 0)
             {
                 _crtMealIndex -= 1;
                 _txtReciepe.Text = _days[_crtDay].MealList[_crtMealIndex].Recipe;
@@ -81,13 +89,25 @@ public partial class DayPage : ContentPage
 
     private async void OnDateSelected(object sender, DateChangedEventArgs e)
     {
+        
+        System.Diagnostics.Debug.WriteLine($"Total days in App.Days: {App.Days.Count}");
+
         try
         {
         _crtDate = (DateTime)_pckDay.Date;
         searchPlan(_crtDate);
+        
+        _crtMealIndex = 0;
+        _txtMeal.Text = _days[_crtDay].MealList[_crtMealIndex].Name;
+            
         _txtReciepe.Text = _days[_crtDay].MealList[_crtMealIndex].Recipe;
         _lstIngredients.ItemsSource = _days[_crtDay].MealList[_crtMealIndex].Ingredients;
-        _lstWorkOut.Text = _days[_crtDay].WorkoutList[0].ToString();
+        
+        if (_days[_crtDay].WorkoutList.Count > 0)
+            _lstWorkOut.Text = _days[_crtDay].WorkoutList[0].ToString();
+        else
+            _lstWorkOut.Text = "No workout planned for this day.";
+        
         }
         catch(Exception ex)
         {
@@ -98,15 +118,37 @@ public partial class DayPage : ContentPage
 
     private void searchPlan(DateTime date)
     {
-        //for each day in the days list search the requested date
-        for (int dayIndex = 0; dayIndex<_days.Count; dayIndex++)
-        foreach (Day day in _days)
+        for (int dayIndex = 0; dayIndex < _days.Count; dayIndex++)
         {
-            if (day.Date == date)
+            if (_days[dayIndex].Date.Date == date.Date)
             {
-                    break;     
+                _crtDay = dayIndex;
+                break;
             }
-            _crtDay = dayIndex;
         }
     }
+
+    private  async void OnLoadPlan(object? sender, EventArgs e)
+    {
+        
+            _crtDate = _pckDay.Date.Value;
+            System.Diagnostics.Debug.WriteLine($"Total days: {App.Days.Count}");
+            searchPlan(_crtDate);
+    
+            if (_days.Count == 0)
+            {
+                await DisplayAlert("No Plan", "No plan found for this date.", "OK");
+                return;
+            }
+    
+            _crtMealIndex = 0;
+            _txtMeal.Text = _days[_crtDay].MealList[_crtMealIndex].Name;
+            _txtReciepe.Text = _days[_crtDay].MealList[_crtMealIndex].Recipe;
+            _lstIngredients.ItemsSource = _days[_crtDay].MealList[_crtMealIndex].Ingredients;
+    
+            if (_days[_crtDay].WorkoutList.Count > 0)
+                _lstWorkOut.Text = _days[_crtDay].WorkoutList[0].ToString();
+            else
+                _lstWorkOut.Text = "No workout planned.";
+        }    
 }

@@ -133,7 +133,8 @@ public partial class Planner : ContentPage
 		};
 
 		// adding a day object to the daylist 
-		_days.Add(day);
+		_days.Add(day);	
+		App.Days.Add(day);
 
 		_dayPlans.Add(summary);
 		

@@ -76,6 +76,8 @@ public class Workout
     {
         return $"{_name} - {_duration} min - {_caloriesBurned} cal burned";
     }
+    
+    
     #endregion
 
 }
