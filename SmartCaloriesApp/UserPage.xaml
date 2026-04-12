@@ -77,11 +77,9 @@
                         Text="Gender"
                         TextColor="{StaticResource TextPrimary}"
                         VerticalOptions="Center" />
-
                     <HorizontalStackLayout
                         Grid.Row="2"
                         Grid.Column="1"
-                        RadioButtonGroup.GroupName="GenderGroup"
                         Spacing="16"
                         VerticalOptions="Center">
 
@@ -90,22 +88,19 @@
                             Background="{StaticResource PageBackground}"
                             Stroke="{StaticResource BorderColor}"
                             StrokeThickness="1">
-
                             <Border.StrokeShape>
                                 <RoundRectangle CornerRadius="16" />
                             </Border.StrokeShape>
-
                             <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
-                                <RadioButton x:Name="_radioMale" IsChecked="True" />
-                                <Image
-                                    HeightRequest="34"
-                                    Source="male.png"
-                                    WidthRequest="34" />
-                                <Label
-                                    FontSize="15"
-                                    Text="Male"
-                                    TextColor="{StaticResource TextPrimary}"
-                                    VerticalOptions="Center" />
+                                <RadioButton x:Name="_radioMale" 
+                                             GroupName="GenderGroup" 
+                                             IsChecked="True"/>
+                                <Image HeightRequest="34"
+                                       Source="male.png"
+                                       WidthRequest="34"/>
+                                <Label FontSize="15" Text="Male"
+                                       TextColor="{StaticResource TextPrimary}"
+                                       VerticalOptions="Center"/>
                             </HorizontalStackLayout>
                         </Border>
 
@@ -114,26 +109,21 @@
                             Background="{StaticResource PageBackground}"
                             Stroke="{StaticResource BorderColor}"
                             StrokeThickness="1">
-
                             <Border.StrokeShape>
                                 <RoundRectangle CornerRadius="16" />
                             </Border.StrokeShape>
-
                             <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
-                                <RadioButton x:Name="_radioFemale" />
-                                <Image
-                                    HeightRequest="34"
-                                    Source="female.png"
-                                    WidthRequest="34" />
-                                <Label
-                                    FontSize="15"
-                                    Text="Female"
-                                    TextColor="{StaticResource TextPrimary}"
-                                    VerticalOptions="Center" />
+                                <RadioButton x:Name="_radioFemale" 
+                                             GroupName="GenderGroup"/>
+                                <Image HeightRequest="34"
+                                       Source="female.png"
+                                       WidthRequest="34"/>
+                                <Label FontSize="15" Text="Female"
+                                       TextColor="{StaticResource TextPrimary}"
+                                       VerticalOptions="Center"/>
                             </HorizontalStackLayout>
                         </Border>
-                    </HorizontalStackLayout>
-
+                    </HorizontalStackLayout>    
                     <!--  Age  -->
                     <Label
                         Grid.Row="3"
